@@ -1,0 +1,15 @@
+vi:
+  layouts:
+    user:
+      header:
+        home: "Trang chủ"
+        about: "Về chúng tôi"
+        menu: "Thực đơn"
+        events: "Sự kiện"
+        contact: "Liên hệ"
+      footer:
+        address: "Địa chỉ"
+        opening_hours: "Giờ mở cửa"
+        opening_description: "<strong>T2-T7: 11AM</strong> - 23PM<br>
+        CN: Đóng cửa"
+        follow_us: "Theo dõi chúng tôi"
