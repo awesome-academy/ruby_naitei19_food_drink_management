@@ -1,0 +1,14 @@
+body {
+  font-family: $font-default;
+  color: $color-default;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #ec2727;
+  text-decoration: none;
+}
