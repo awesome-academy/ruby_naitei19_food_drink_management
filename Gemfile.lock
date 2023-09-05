@@ -77,6 +77,7 @@ GEM
     autoprefixer-rails (10.4.13.0)
       execjs (~> 2)
     base64 (0.1.1)
+    bcrypt (3.1.19)
     bindex (0.8.1)
     bootsnap (1.16.0)
       msgpack (~> 1.2)
@@ -255,7 +256,7 @@ GEM
       rspec-mocks (~> 3.12)
       rspec-support (~> 3.12)
     rspec-support (3.12.1)
-    rubocop (1.56.0)
+    rubocop (1.56.2)
       base64 (~> 0.1.1)
       json (~> 2.3)
       language_server-protocol (>= 3.17.0)
@@ -332,6 +333,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_storage_validations (= 0.9.8)
+  bcrypt (~> 3.1.7)
   bootsnap
   bootstrap-sass (= 3.4.1)
   capybara

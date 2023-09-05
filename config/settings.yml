@@ -1,0 +1,51 @@
+validates:
+  users:
+    email:
+      format: !ruby/regexp '/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i'
+      max_length: 255
+    name:
+      max_length: 50
+  categories:
+    name:
+      max_length: 50
+    slug:
+      max_length: 50
+    description:
+      max_length: 500
+  cuisines:
+    name:
+      max_length: 50
+    slug:
+      max_length: 50
+    description:
+      max_length: 500
+    price:
+      min: 0
+      max: 2000000
+  reviews:
+    comment:
+      max_length: 500
+    star:
+      min: 0
+      max: 5
+  orders:
+    address:
+      max_length: 500
+    phone:
+      max_length: 20
+    note:
+      max_length: 500
+  order_items:
+    quantity:
+      min: 1
+      max: 1000
+    price:
+      min: 0
+      max: 2000000
+  options:
+    name:
+      max_length: 50
+    price:
+      min: 0
+      max: 500000
+app_name: "Yummy"
