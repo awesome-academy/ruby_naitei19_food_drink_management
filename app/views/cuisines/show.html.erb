@@ -1,0 +1,13 @@
+<section class="cuisine-details">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <%= image_tag @cuisine.image, class: "cuisine-image" %>
+        <h1 class="cuisine-name"><%= @cuisine.name %></h1>
+        <p class="cuisine-description"><%= @cuisine.description %></p>
+        <p class="cuisine-discount"><%= @cuisine.discount %> % <%= t "cuisine.discount" %></p>
+        <p class="cuisine-price"><strong><%= t "cuisine.price" %></strong> <%= number_to_currency(@cuisine.price) %></p>
+      </div>
+    </div>
+  </div>
+</section>
