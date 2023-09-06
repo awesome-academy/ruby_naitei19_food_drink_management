@@ -1,4 +1,11 @@
 vi:
+  activerecord:
+    attributes:
+      user:
+        first_name: "Tên"
+        last_name: "Họ"
+        email: "Email"
+        password: "Mật khẩu"
   layouts:
     user:
       header:
@@ -13,3 +20,15 @@ vi:
         opening_description: "<strong>T2-T7: 11AM</strong> - 23PM<br>
         CN: Đóng cửa"
         follow_us: "Theo dõi chúng tôi"
+
+  users:
+    new:
+      title: "Đăng ký"
+      first_name: "Tên"
+      last_name: "Họ"
+      email: "Email"
+      password: "Mật khẩu"
+      password_confirmation: "Xác nhận mật khẩu"
+      submit: "Đăng ký"
+    create:
+      success: "Tạo tài khoản thành công"

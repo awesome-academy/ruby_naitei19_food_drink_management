@@ -13,3 +13,14 @@ en:
         opening_description: "<strong>Mon-Sat: 11AM</strong> - 23PM<br>
               Sunday: Closed"
         follow_us: "Follow us"
+  users:
+    new:
+      title: "Sign up"
+      first_name: "First Name"
+      last_name: "Last Name"
+      email: "Email"
+      password: "Password"
+      password_confirmation: "Confirm Password"
+      submit: "Sign up"
+    create:
+      success: "User created successfully"
