@@ -4,7 +4,9 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :reviews, dependent: :destroy
 
-  validates :name, presence: true,
+  validates :first_name, presence: true,
+          length: {maximum: Settings.validates.users.name.max_length}
+  validates :last_name, presence: true,
           length: {maximum: Settings.validates.users.name.max_length}
   validates :email, presence: true, uniqueness: true,
             format: {with: Settings.validates.users.email.format},

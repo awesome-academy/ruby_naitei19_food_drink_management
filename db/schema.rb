@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_04_230109) do
     t.string "slug"
     t.text "description"
     t.integer "price"
-    t.integer "discount"
+    t.integer "discount", default: 0
     t.boolean "available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

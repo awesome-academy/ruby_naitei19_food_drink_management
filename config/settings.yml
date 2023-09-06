@@ -48,3 +48,4 @@ validates:
     price:
       min: 0
       max: 500000
+app_name: "Yummy"
