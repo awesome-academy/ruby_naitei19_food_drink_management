@@ -10,7 +10,8 @@
       <ul>
         <li><%= link_to t(".home"), "/" %></li>
         <li><%= link_to t(".about"), "#" %></li>
-        <li><%= link_to t(".menu"), "#" %></li>
+        <li><%= link_to t(".menu"), category_path('category-1') %></li>
+        <li><%= link_to t(".all_cuisines"), cuisines_path %></li>
         <li class="dropdown"><a href="#"><span><%= t ".events" %></span>
           <i class="bi bi-chevron-down dropdown-indicator"></i></a>
           <ul>

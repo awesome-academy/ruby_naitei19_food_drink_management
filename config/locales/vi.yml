@@ -14,13 +14,13 @@ vi:
         menu: "Thực đơn"
         events: "Sự kiện"
         contact: "Liên hệ"
+        all_cuisines: "Tat ca cac mon"
       footer:
         address: "Địa chỉ"
         opening_hours: "Giờ mở cửa"
         opening_description: "<strong>T2-T7: 11AM</strong> - 23PM<br>
         CN: Đóng cửa"
         follow_us: "Theo dõi chúng tôi"
-
   users:
     new:
       title: "Đăng ký"
@@ -32,3 +32,21 @@ vi:
       submit: "Đăng ký"
     create:
       success: "Tạo tài khoản thành công"
+  category:
+    menu: "Thuc don"
+    menu_explore: "Kham pha thuc don tuyet voi nhat cua chung toi"
+    menu_intro: "Cung nhau kham pha thuc don vo cung tam dac cua nha hang, duoc tao nen boi doi ban tay tuyet voi cua dau bep 5 sao"
+  search:
+    search_intro: "Tim kiem mon an"
+    search_name: "Theo ten:"
+    search_des: "Theo mo ta:"
+    search_category: "Theo danh muc:"
+    search_min_price: "Gia thap nhat:"
+    search_max_price: "Gia cao nhat:"
+    search: "Tim kiem"
+  cuisine:
+    price: "Gia:"
+    discount: "Giam gia"
+    not_have: "Khong co mon an nay"
+  category:
+    no_have: "Khong co danh muc nay"

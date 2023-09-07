@@ -2,6 +2,15 @@ class Cuisine < ApplicationRecord
   belongs_to :category
   has_many :options, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_one_attached :image
+
+  def self.ransackable_attributes _auth_object = nil
+    %w(name description price category_id)
+  end
+
+  delegate :name, to: :category, prefix: true
+
+  scope :order_by_created_at, ->{order(created_at: :desc)}
 
   validates :name, presence: true,
     length: {maximum: Settings.validates.cuisines.name.max_length}
