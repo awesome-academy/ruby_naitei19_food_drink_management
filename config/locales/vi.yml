@@ -15,6 +15,10 @@ vi:
         events: "Sự kiện"
         contact: "Liên hệ"
         all_cuisines: "Tat ca cac mon"
+        my_account: "Tài khoản"
+        my_purchase: "Đơn mua"
+        logout: "Đăng xuất"
+        login: "Đăng nhập"
       footer:
         address: "Địa chỉ"
         opening_hours: "Giờ mở cửa"
@@ -50,3 +54,12 @@ vi:
     not_have: "Khong co mon an nay"
   category:
     no_have: "Khong co danh muc nay"
+  sessions:
+    user_not_found: "Không tìm thấy người dùng"
+    invalid_combination: "Kết hợp email/mật khẩu không hợp lệ"
+    new:
+      title: "Đăng nhập"
+      email: "Email"
+      password: "Mật khẩu"
+      submit: "Đăng nhập"
+      remember_me: "Ghi nhớ đăng nhập"
