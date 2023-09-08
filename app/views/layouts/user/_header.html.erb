@@ -22,10 +22,25 @@
       </ul>
     </nav>
 
-    <div>
-
+    <div class="d-flex gap-3">
       <div class="btn btn-book-a-table"><i class="bi bi-cart3"></i></div>
-      <%= link_to "Login", "#", class: "login" %>
+      <% if logged_in? %>
+        <div class="dropdown">
+          <a href="#" id="account" class="dropdown-toggle h-100">
+            <%= current_user.email %> <b class="caret"></b>
+          </a>
+          <div id="dropdown-menu" class="dropdown-menu">
+            <%= link_to t(".my_account"), "#", class: "dropdown-item" %>
+            <%= link_to t(".my_purchase"), "#", class: "dropdown-item" %>
+            <li class="dropdown-divider" ></li>
+            <%= link_to t(".logout"), logout_path,
+            data: {"turbo-method": :delete}, class: "dropdown-item" %>
+          </div>
+        </div>
+      <% else %>
+        <%= link_to t(".login"), login_path, class: "login" %>
+      <% end %>
+
     </div>
-  </>
+  </div>
 </header>

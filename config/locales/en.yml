@@ -8,6 +8,10 @@ en:
         events: "Events"
         contact: "Contact"
         all_cuisines: "All Cuisines"
+        my_account: "My Account"
+        my_purchase: "My Purchase"
+        logout: "Logout"
+        login: "Login"
       footer:
         address: "Address"
         opening_hours: "Opening hours"
@@ -43,3 +47,12 @@ en:
     not_have: "Don't have this cuisine"
   category:
     no_have: "Don't have this category"
+  sessions:
+    user_not_found: "User not found"
+    invalid_combination: "Invalid email/password combination"
+    new:
+      title: "Login"
+      email: "Email"
+      password: "Password"
+      submit: "Login"
+      remember_me: "Remember me"
