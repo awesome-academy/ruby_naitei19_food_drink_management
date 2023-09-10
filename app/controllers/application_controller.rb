@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
+  include CuisineHelper
   before_action :set_locale
+  include SessionsHelper
 
   private
   def set_locale

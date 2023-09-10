@@ -1,0 +1,19 @@
+<section class="bg-04" id="our-menu">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="heading">
+          <span><%= t "category.menu" %></span>
+          <h2><%= t "category.menu_explore" %></h2>
+          <p><%= t "category.menu_intro" %></p>
+        </div>
+      </div>
+      <div class="category-list">
+        <%= will_paginate @categories%>
+        <%= render @categories %>
+      </div>
+     <%= render @cuisines %>
+
+    </div>
+  </div>
+</section>

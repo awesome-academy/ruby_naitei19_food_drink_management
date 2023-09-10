@@ -58,15 +58,48 @@
 .header .btn-book-a-table:hover,
 .header .btn-book-a-table:focus:hover {
   color: #fff;
-  background: #e69c00;
+  &:hover {
+    background-color: darken($color: $primary, $amount: 15);
+  }
 }
 .header .login {
   color: $default;
   font-weight: 500;
-  margin-left: 20px;
+  line-height: 38px;
 }
 section {
   scroll-margin-top: 90px;
+}
+
+/* Dropdown */
+.dropdown {
+  .dropdown-toggle {
+    font-size: 18px;
+    line-height: 38px;
+    color: $textCol;
+  }
+  .dropdown-menu {
+    font-size: 18px;
+    top: calc(100% + 10px);
+    right: 0;
+    border: none;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    animation: growIn .2s;
+    &.show {
+      display: block;
+    }
+  }
+}
+
+@keyframes growIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 /* Desktop Navigation */
@@ -294,8 +327,6 @@ section {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-
 /* Sign up */
 .signup_section {
   position: relative;
@@ -333,4 +364,161 @@ section {
       @include hero_btn($primary, $white, 10px, 55px, 45px);
     }
   }
+}
+
+/* CSS để sắp xếp các category thành một hàng ngang */
+.category-list {
+  display: flex;
+  justify-content: space-between; /* Phân cách đều giữa các category */
+  flex-wrap: wrap; /* Cho phép các category chuyển dòng khi không đủ không gian */
+}
+
+.category-item {
+  flex: 0 0 calc(33.33% - 10px); /* Số lượng category trên mỗi hàng, có khoảng cách 10px giữa chúng */
+  margin-bottom: 10px; /* Khoảng cách dưới mỗi category */
+  box-sizing: border-box;
+  border: 1px solid #e0e0e0; /* Viền xung quanh các category */
+  padding: 10px;
+}
+
+/* Để làm cho category trở nên hấp dẫn hơn */
+.category-item:hover {
+  background-color: #f5f5f5; /* Màu nền khi hover */
+  transition: background-color 0.2s ease-in-out;
+}
+
+/* CSS để tạo giao diện cho mỗi item cuisine */
+.cuisine-item {
+  margin-bottom: 20px; /* Khoảng cách giữa các item */
+  border: 1px solid #e0e0e0; /* Viền xung quanh các item */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ */
+  transition: box-shadow 0.2s ease-in-out; /* Hiệu ứng bóng đổ khi hover */
+}
+
+.cuisine-item:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ lớn hơn khi hover */
+}
+
+.cuisine-image {
+  max-width: 100%; /* Ảnh tự thích nghi với kích thước của thẻ cha */
+}
+
+.sentence {
+  padding: 15px;
+}
+
+.sentence h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.sentence h6 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #888;
+}
+
+.sentence p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* Thay đổi màu nền và màu chữ cho category được chọn */
+.category-item.selected {
+  background-color: #dad9e2; /* Màu nền */
+  color: #FFFFFF; /* Màu chữ */
+}
+
+/* Thay đổi kiểu dáng cho liên kết cuisine */
+.cuisine-link {
+  /* Các kiểu dáng tùy ý ở đây */
+  text-decoration: none; /* Loại bỏ gạch chân mặc định */
+  color: #333; /* Màu chữ */
+}
+
+.cuisine-link:hover {
+  /* Kiểu dáng khi rê chuột vào liên kết */
+  color: #FF0000; /* Màu chữ khác khi rê chuột vào */
+}
+
+/* app/assets/stylesheets/cuisines.css */
+
+.cuisine-details {
+  padding: 50px 0;
+}
+
+.cuisine-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.cuisine-name {
+  font-size: 28px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.cuisine-description {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.cuisine-discount {
+  font-size: 16px;
+  color: #e74c3c; /* Màu đỏ cho phần giảm giá */
+  margin-top: 10px;
+}
+
+.cuisine-price {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #27ae60; /* Màu xanh cho giá tiền */
+}
+
+/* Áp dụng màu xám cho ảnh */
+.cuisine-image-not-available {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+  filter: grayscale(100%); /* Biến ảnh thành màu xám */
+}
+
+.search_button {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.search-form {
+  text-align: center;
+  padding: 20px;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.search-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.form-group:last-child {
+  margin-right: 0;
+}
+
+.form-control {
+  width: 100%;
+}
+
+.search_button {
+  margin-top: 10px;
 }

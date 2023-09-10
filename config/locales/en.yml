@@ -7,6 +7,11 @@ en:
         menu: "Menu"
         events: "Events"
         contact: "Contact"
+        all_cuisines: "All Cuisines"
+        my_account: "My Account"
+        my_purchase: "My Purchase"
+        logout: "Logout"
+        login: "Login"
       footer:
         address: "Address"
         opening_hours: "Opening hours"
@@ -24,3 +29,30 @@ en:
       submit: "Sign up"
     create:
       success: "User created successfully"
+  category:
+    menu: "Menu"
+    menu_explore: "Explore Our Best Menu"
+    menu_intro: "Together, explore the restaurant's extremely favorite menu, created by the wonderful hands of a 5-star chef."
+  search:
+    search_intro: "Find cuisine"
+    search_name: "Search by name:"
+    search_des: "Search by description:"
+    search_category: "Search by category:"
+    search_min_price: "Minimum Price:"
+    search_max_price: "Maximum Price:"
+    search: "Search"
+  cuisine:
+    price: "Price:"
+    discount: "Discount"
+    not_have: "Don't have this cuisine"
+  category:
+    no_have: "Don't have this category"
+  sessions:
+    user_not_found: "User not found"
+    invalid_combination: "Invalid email/password combination"
+    new:
+      title: "Login"
+      email: "Email"
+      password: "Password"
+      submit: "Login"
+      remember_me: "Remember me"

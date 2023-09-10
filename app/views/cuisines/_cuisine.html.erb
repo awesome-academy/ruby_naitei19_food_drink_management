@@ -1,0 +1,14 @@
+<div class="col-md-4 col-sm-6">
+  <div class="cuisine-item">
+    <div class="<%= cuisine_available_class(cuisine) %>">
+      <%= link_to cuisine_path(cuisine.slug), class: "cuisine-link" do %>
+        <%= image_tag cuisine_image(cuisine), class: cuisine_image_class(cuisine) %>
+        <div class="sentence">
+          <h3><%= cuisine.name %> <span><%= number_to_currency(cuisine.price) %></span></h3>
+          <h6><%= cuisine.category_name %></h6>
+          <p><%= cuisine.description %></p>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
