@@ -1,0 +1,22 @@
+ <tr class="order-item" >
+  <th class="align-middle" scope="row"> <%= order_counter + 1 %> </th>
+  <td class="align-middle"><%= order.created_at %></td>
+  <td class="align-middle"><%= order.address %></td>
+  <td class="align-middle">
+    <div class="total-amount">
+      <span><%= number_to_currency(order.sum) %></span>
+    </div>
+    <div class="payment">
+      <span><%= t ".payment_in_cash" %></span>
+    </div>
+  </td>
+  <td class="status-box">
+    <div class="status <%= order.status %>">
+      <%= t(".#{order.status}") %>
+    </div>
+    <%= link_to t(".re_order"), "#", class: "status re-order" %>
+  </td>
+  <td class="align-middle">
+    <%= link_to t(".view_order_detail"), "#", class: "view-detail" %>
+  </td>
+</tr>

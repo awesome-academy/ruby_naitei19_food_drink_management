@@ -86,6 +86,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_094553) do
   create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "note"
+    t.string "address"
+    t.string "phone"
     t.integer "status"
     t.integer "sum"
     t.datetime "created_at", null: false

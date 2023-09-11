@@ -27,7 +27,7 @@
           </a>
           <div id="dropdown-menu" class="dropdown-menu">
             <%= link_to t(".my_account"), "#", class: "dropdown-item" %>
-            <%= link_to t(".my_purchase"), "#", class: "dropdown-item" %>
+            <%= link_to t(".my_purchase"), orders_path, class: "dropdown-item" %>
             <li class="dropdown-divider" ></li>
             <%= link_to t(".logout"), logout_path,
             data: {"turbo-method": :delete}, class: "dropdown-item" %>

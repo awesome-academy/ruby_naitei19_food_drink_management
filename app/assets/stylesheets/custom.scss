@@ -522,3 +522,105 @@ h3 {
 .search_button {
   margin-top: 10px;
 }
+
+/* Order history */
+.order-history {
+  font-size: 18px;
+  .table-container {
+    padding: 20px 15px;
+    border: 1px solid #ebebeb;
+  }
+  .filter {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      white-space: nowrap;
+    }
+  }
+  .form-select:focus, .form-control:focus {
+    box-shadow: none !important;
+    border: 1px solid #959595;
+  }
+  .btn_box {
+    border: none;
+    @include hero_btn($primary, $white, 4px, 12px, 0.2rem);
+  }
+  .history-table {
+    margin-top: 30px;
+    th {
+      border-bottom-color: #ebebeb !important;
+    }
+    thead th{
+      color: $primary;
+      font-weight: 500;
+    }
+  }
+  .pagination {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    .page-link:focus {
+      box-shadow: none;
+    }
+    .page-item {
+      &.active {
+        .page-link {
+          background-color: $primary;
+          border-color: $primary;
+          color: $white;
+        }
+      }
+      .page-link {
+        color: $textCol;
+      }
+    }
+  }
+}
+/* Order items */
+.order-item {
+  font-size: 16px;
+  .total-amount {
+    font-weight: 500;
+  }
+  .payment {
+    color: #008000;
+    font-weight: 500;
+  }
+  .status-box {
+    width: 120px;
+  }
+  .status {
+    text-align: center;
+    width: 90px;
+    height: 26px;
+    line-height: 26px;
+    border-radius: 3px;
+    font-size: 14px;
+    font-weight: 500;
+    color: $textCol;
+  }
+  .accepted {
+    background-color: $success;
+  }
+  .pending {
+    background-color: $warning;
+  }
+  .rejected {
+    background-color: $danger;
+    color: $white
+  }
+  .re-order {
+    display: block;
+    background-color: $disabled;
+    margin-top: 5px;
+  }
+  .view-detail {
+    display: block;
+    text-align: center;
+    color: $info;
+  }
+}
