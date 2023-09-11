@@ -1,0 +1,129 @@
+<header class="header header-sticky mb-4">
+  <div class="container-fluid">
+    <button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
+      <i class="bi bi-list"></i>
+    </button>
+    <a class="header-brand d-md-none" href="#">
+      <%= image_tag("logo.svg", alt: "Your SVG Image", width: 130, height: 130) %>
+    </a>
+    <ul class="header-nav d-none d-md-flex">
+      <li class="nav-item"><a class="nav-link" href="#"><%= t('.dashboard') %></a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><%= t('.users') %></a></li>
+      <li class="nav-item"><a class="nav-link" href="#"><%= t('.settings') %></a></li>
+      <div class="locale-icons-container">
+        <%= link_to image_tag('vi.png', class: 'locale-icon'), locale: :vi %>
+        <%= link_to image_tag('en.png', class: 'locale-icon'), locale: :en %>
+      </div>
+    </ul>
+    <ul class="header-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="bi bi-bell icon icon-lg"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="bi bi-list-task icon icon-lg"></i>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="bi bi-envelope-open icon icon-lg"></i>
+        </a>
+      </li>
+    </ul>
+    <ul class="header-nav ms-3">
+      <li class="nav-item dropdown">
+        <a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+          <div class="avatar avatar-md"><img class="avatar-img" src="https://static.vecteezy.com/system/resources/previews/019/896/008/original/male-user-avatar-icon-in-flat-design-style-person-signs-illustration-png.png" alt="user@email.com"></div>
+        </a>
+        <div class="dropdown-menu dropdown-menu-end pt-0">
+          <div class="dropdown-header bg-light py-2">
+            <div class="fw-semibold">Account</div>
+          </div>
+          <a class="dropdown-item" href="#">
+            <svg class="icon me-2">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
+            </svg>
+            <%= t('.updates') %>
+            <span class="badge badge-sm bg-info ms-2">42</span>
+          </a>
+          <a class="dropdown-item" href="#">
+            <svg class="icon me-2">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
+            </svg>
+            <%= t('.messages') %>
+            <span class="badge badge-sm bg-success ms-2">42</span>
+          </a>
+          <a class="dropdown-item" href="#">
+            <svg class="icon me-2">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-task"></use>
+            </svg>
+            <%= t('.tasks') %>
+            <span class="badge badge-sm bg-danger ms-2">42</span>
+          </a>
+          <a class="dropdown-item" href="#">
+            <svg class="icon me-2">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-comment-square"></use>
+            </svg>
+            <%= t('.comments') %>
+            <span class="badge badge-sm bg-warning ms-2">42</span>
+          </a>
+          <div class="dropdown-header bg-light py-2">
+            <div class="fw-semibold">Settings</div>
+          </div>
+          <a class="dropdown-item" href="#">
+            <svg class="icon me-2">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
+            </svg>
+            <%= t('.profile') %>
+          </a>
+          <a class="dropdown-item" href="#">
+            <svg class="icon me-2">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-settings"></use>
+            </svg>
+            <%= t('.settings') %>
+          </a>
+          <a class="dropdown-item" href="#">
+            <svg class="icon me-2">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-credit-card"></use>
+            </svg>
+            <%= t('.payments') %>
+            <span class="badge badge-sm bg-secondary ms-2">42</span>
+          </a>
+          <a class="dropdown-item" href="#">
+            <svg class="icon me-2">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-file"></use>
+            </svg>
+            <%= t('.projects') %>
+            <span class="badge badge-sm bg-primary ms-2">42</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">
+            <svg class="icon me-2">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-lock-locked"></use>
+            </svg>
+            <%= t('.lock_account') %>
+          </a>
+          <a class="dropdown-item" href="#">
+            <svg class="icon me-2">
+              <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
+            </svg>
+            <%= t('.logout') %>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="header-divider"></div>
+  <div class="container-fluid">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb my-0 ms-2">
+        <li class="breadcrumb-item">
+          <!-- if breadcrumb is single--><span><%= t('.home') %></span>
+        </li>
+        <li class="breadcrumb-item active"><span><%= t('.blank') %></span></li>
+      </ol>
+    </nav>
+  </div>
+</header>
