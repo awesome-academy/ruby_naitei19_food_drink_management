@@ -1,4 +1,12 @@
 vi:
+  currency:
+    format:
+      delimiter: ","
+      format: "%u%n"
+      precision: 2
+      separator: "."
+      unit: "đ"
+
   activerecord:
     attributes:
       user:
@@ -25,6 +33,31 @@ vi:
         opening_description: "<strong>T2-T7: 11AM</strong> - 23PM<br>
         CN: Đóng cửa"
         follow_us: "Theo dõi chúng tôi"
+    admin:
+      title: "Quản lý"
+      header:
+        dashboard: "Bảng điều khiển"
+        users: "Người dùng"
+        settings: "Cài đặt"
+        accounts: "Tài khoản"
+        updates: "Cập nhật"
+        messages: "Tin nhắn"
+        tasks: "Nhiệm vụ"
+        comments: "Bình luận"
+        profile: "Hồ sơ"
+        payments: "Thanh toán"
+        projects: "Dự án"
+        lock_account: "Khóa tài khoản"
+        logout: "Đăng xuất"
+        home: "Trang chủ"
+        blank: "Trống"
+      sidebar:
+        dashboard: "Bảng điều khiển"
+        NEW: "MỚI"
+        manager: "Quản lý"
+        users: "Người dùng"
+        cuisines: "Món ăn"
+        categories: "Danh mục"
   users:
     new:
       title: "Đăng ký"
@@ -63,3 +96,21 @@ vi:
       password: "Mật khẩu"
       submit: "Đăng nhập"
       remember_me: "Ghi nhớ đăng nhập"
+
+  admin:
+    cuisines:
+      index:
+        name: "Tên"
+        description: "Mô tả"
+        category: "Danh mục"
+        actions: "Thao tác"
+        new: "Cuisine Mới"
+        image: "Hình ảnh"
+        title: "Quản lý Cuisine"
+        back: "Quay lại"
+        price: "Giá"
+        are_you_sure: "Bạn có chắc không?"
+    shared:
+      cuisine:
+        edit: "Chỉnh sửa"
+        delete: "Xóa"

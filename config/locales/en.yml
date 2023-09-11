@@ -1,4 +1,12 @@
 en:
+  currency:
+    format:
+      delimiter: ","
+      format: "%u%n"
+      precision: 2
+      separator: "."
+      unit: "$"
+
   layouts:
     user:
       header:
@@ -16,8 +24,33 @@ en:
         address: "Address"
         opening_hours: "Opening hours"
         opening_description: "<strong>Mon-Sat: 11AM</strong> - 23PM<br>
-              Sunday: Closed"
+          Sunday: Closed"
         follow_us: "Follow us"
+    admin:
+      title: "Admin Dashboard"
+      header:
+        dashboard: "Dashboard"
+        users: "Users"
+        settings: "Settings"
+        accounts: "Accounts"
+        updates: "Updates"
+        messages: "Messages"
+        tasks: "Tasks"
+        comments: "Comments"
+        profile: "Profile"
+        payments: "Payments"
+        projects: "Projects"
+        lock_account: "Lock Account"
+        logout: "Logout"
+        home: "Home"
+        blank: "Blank"
+      sidebar:
+        dashboard: "Dashboard"
+        NEW: "NEW"
+        manager: "Manager"
+        users: "Users"
+        cuisines: "Cuisines"
+        categories: "Categories"
   users:
     new:
       title: "Sign up"
@@ -56,3 +89,21 @@ en:
       password: "Password"
       submit: "Login"
       remember_me: "Remember me"
+
+  admin:
+    cuisines:
+      index:
+        name: "Name"
+        description: "Description"
+        category: "Category"
+        actions: "Actions"
+        new: "New Cuisine"
+        image: "Image"
+        title: "Cuisines Management"
+        back: "Back"
+        price: "Price"
+        are_you_sure: "Are you sure?"
+    shared:
+      cuisine:
+        delete: "Delete"
+        edit: "Edit"
