@@ -1,0 +1,14 @@
+<tr>
+  <td><%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDU6jyhFSKHkeRWxj1qe5q-FqO8tcVuRbT2g&usqp=CAU", width: 100 %></td>
+  <td><%= link_to cuisine.name, admin_cuisine_path(cuisine) %></td>
+  <td><%= cuisine.description %></td>
+  <td><%= number_to_currency(cuisine.price) %></td>
+  <td class="operations">
+    <button type="button" class="btn btn-success">
+      <%= link_to t(".edit"), edit_admin_cuisine_path(cuisine) %>
+    </button>
+    <button type="button" class="btn btn-danger">
+      <%= link_to t(".delete"), admin_cuisine_path(cuisine), method: :delete, data: { confirm: t(".are_you_sure") } %>
+    </button>
+  </td>
+</tr>

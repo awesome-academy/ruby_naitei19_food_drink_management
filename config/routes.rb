@@ -8,5 +8,9 @@ Rails.application.routes.draw do
     resources :users, only: :create
     resources :categories, param: :slug, only: :show
     resources :cuisines, param: :slug, only: %i(index show)
+
+    namespace :admin do
+      resources :cuisines
+    end
   end
 end

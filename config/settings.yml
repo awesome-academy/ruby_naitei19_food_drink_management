@@ -51,5 +51,5 @@ validates:
 app_name: "Yummy"
 config:
   pagination:
-    cuisines_per_page: 2
+    cuisines_per_page: 10
     categories_per_page: 10

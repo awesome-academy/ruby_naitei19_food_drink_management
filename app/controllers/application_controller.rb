@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   include CuisineHelper
   before_action :set_locale
   include SessionsHelper
+  include Pagy::Backend
 
   private
   def set_locale

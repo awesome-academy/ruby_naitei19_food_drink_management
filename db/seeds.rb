@@ -73,3 +73,43 @@ cuisine6 = Cuisine.create(
 cuisine6.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
 # Add more cuisines with unique images as needed
+first_name = "Admin"
+last_name = "Admin"
+email = "admin@gmail.com"
+password = "123456"
+password_confirmation = "123456"
+is_actived = true
+phone = Faker::PhoneNumber.cell_phone
+address = Faker::Address.full_address
+role = 0
+avatar = Faker::Avatar.image
+User.create(first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password_confirmation, is_actived: is_actived, phone: phone, address: address, role: role, avatar: avatar)
+
+100.times do
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  email = Faker::Internet.email
+  password = "123456"
+  password_confirmation = "123456"
+  is_actived = true
+  phone = Faker::PhoneNumber.cell_phone
+  address = Faker::Address.full_address
+  role = 1
+  avatar = Faker::Avatar.image
+  User.create(first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password_confirmation, is_actived: is_actived, phone: phone, address: address, role: role, avatar: avatar)
+end
+
+
+20.times do
+  name = Faker::Food.ethnic_category
+  Category.create(name: name, slug: name.parameterize)
+end
+
+100.times do
+  name = Faker::Food.dish
+  description = Faker::Food.description
+  price = Faker::Number.between(from: 10000, to: 100000)
+  discount = Faker::Number.between(from: 0, to: 100)
+  available = true
+  Cuisine.create(name: name, slug: name.parameterize, description: description, price: price, discount: discount, available: available, category_id: Faker::Number.between(from: 1, to: 20))
+end

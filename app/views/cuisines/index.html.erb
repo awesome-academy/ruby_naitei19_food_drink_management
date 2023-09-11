@@ -30,15 +30,16 @@
     </div>
   <% end %>
 </div>
-
-
-
 <section class="bg-04" id="our-menu">
   <div class="container">
     <div class="row">
-    <%= will_paginate @cuisines %>
-     <%= render @cuisines %>
-    <%= will_paginate @cuisines %>
+      <% if @cuisines.any? %>
+        <%= will_paginate @cuisines %>
+        <%= render @cuisines %>
+        <%= will_paginate @cuisines %>
+      <% else %>
+        <p>No cuisines found.</p>
+      <% end %>
     </div>
   </div>
 </section>
