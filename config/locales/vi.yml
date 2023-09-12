@@ -96,7 +96,6 @@ vi:
       password: "Mật khẩu"
       submit: "Đăng nhập"
       remember_me: "Ghi nhớ đăng nhập"
-
   admin:
     cuisines:
       index:
@@ -114,3 +113,28 @@ vi:
       cuisine:
         edit: "Chỉnh sửa"
         delete: "Xóa"
+  orders:
+    filter_form:
+      status: "Trạng thái"
+      from_day: "Từ ngày"
+      to_day: "Đến ngày"
+    order:
+      payment_in_cash: "Thanh toán tiền mặt"
+      re_order: "Đặt lại"
+      view_order_detail: Xem chi tiết đơn hàng
+      pending: "Đang xử lý"
+      accepted: "Chấp nhận"
+      rejected: "Đã Hủy"
+    index:
+      require_login: "Bạn cần đăng nhập trước"
+      title: "Lịch sử đơn hàng"
+      time: "Thời gian"
+      address: "Địa chỉ"
+      total_amount: "Tổng tiền"
+      detail: "Chi tiết"
+      all: "Tất cả"
+  order:
+    status:
+      pending: "Đang xử lý"
+      accepted: "Chấp nhận"
+      rejected: "Đã Hủy"

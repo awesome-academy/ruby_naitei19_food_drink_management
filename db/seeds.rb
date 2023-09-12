@@ -1,4 +1,15 @@
-# db/seeds.rb
+# Create users
+User.create!(
+  first_name: "Example",
+  last_name: "Customer",
+  email: "example@example.com",
+  password: "123456",
+  password_confirmation: "123456",
+  address: Faker::Address.full_address,
+  phone: Faker::PhoneNumber.cell_phone,
+  is_actived: true,
+  activation_at: Time.zone.now
+)
 
 # Create Categories
 category1 = Category.create(name: "Category 1", slug: "category-1")
@@ -112,4 +123,26 @@ end
   discount = Faker::Number.between(from: 0, to: 100)
   available = true
   Cuisine.create(name: name, slug: name.parameterize, description: description, price: price, discount: discount, available: available, category_id: Faker::Number.between(from: 1, to: 20))
+end
+
+# Create orders
+10.times do |n|
+  order = Order.create!(
+    user_id: User.pluck(:id).sample,
+    address: Faker::Address.full_address,
+    phone: Faker::PhoneNumber.cell_phone,
+    status: rand(0..2)
+  )
+  rand(1..5).times do |n|
+    order_item = OrderItem.create!(
+      order_id: order.id,
+      cuisine_id: Cuisine.pluck(:id).sample,
+      quantity: rand(2..5),
+      price: rand(50000..100000),
+    )
+    order_item.sum = order_item.quantity * order_item.price
+    order_item.save!
+  end
+  order.sum = order.order_items.sum(:sum)
+  order.save!
 end
