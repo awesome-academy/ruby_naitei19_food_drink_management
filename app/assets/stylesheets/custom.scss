@@ -684,3 +684,92 @@ h3 {
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+/* Update user profile */
+.edit-profile {
+  .wrapper {
+    width: 1200px;
+    margin: auto;
+    padding: 35px 0;
+  }
+  .stat {
+    border-radius: 4px;
+    padding: 5px 16px;
+    min-height: 428px;
+    box-shadow: 0 0 3px rgba(50,50,50,0.3);
+    .stat-header {
+      padding: 10px 0;
+      .avatar-circle {
+        @include avatar_circle(40px)
+      }
+      .user-name {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 40px;
+      }
+    }
+    .stat-item {
+      color: $default;
+      padding: 10px 0;
+      a {
+        color: $default;
+      }
+      i {
+        font-size: 18px;
+        padding: 10px;
+      }
+      &.active {
+        color: $primary;
+        a {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  .user-info {
+    box-shadow: 0 0 3px rgba(50,50,50,0.3);
+  }
+  .user-info-header {
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 1px solid #ebebeb;
+    background-color: #f5f5f5;
+    padding: 15px 16px;
+  }
+  .user-info-content {
+    padding: 30px;
+    .title-user {
+      font-weight: 700;
+      padding-bottom: 20px;
+      font-size: 15px;
+      color: $info;
+    }
+    .avatar-circle {
+      @include avatar_circle(115px)
+    }
+    .avatar-input::file-selector-button {
+      border-radius: .2em;
+      background-color: $info;
+      border: none;
+      color: $white;
+      padding: 4px 10px;
+      cursor: pointer;
+    }
+    label {
+      font-weight: 500;
+    }
+    .form-control {
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    .submit-btn {
+      @include hero_btn($info, $white, 4px, 20px, 3px);
+      width: 100%;
+    }
+    .error {
+      color: var(--bs-red);
+    }
+  }
+}

@@ -14,7 +14,6 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :phone
       t.string :address
       t.integer :role , default: 1
-      t.string :avatar
 
       t.timestamps
       t.index :email, name: "index_users_on_email", unique: true

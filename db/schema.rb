@@ -120,7 +120,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_05_094553) do
     t.string "phone"
     t.string "address"
     t.integer "role", default: 1
-    t.string "avatar"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_users_on_email", unique: true

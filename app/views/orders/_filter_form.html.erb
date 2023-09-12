@@ -1,25 +1,25 @@
-    <%= form_with url: orders_path, method: :get do |f| %>
-      <div class="filter">
-        <div class="item">
-          <%= f.label :status, t(".status") %>
-          <%= f.select :status,
-            options_for_select(Order.statuses_i18n.unshift([t(".all"), ""]),
-            selected: params[:status]), {},
-            {class: "form-select"}
-          %>
-        </div>
-        <div class="item">
-          <%= f.label :from_date, t(".from_day")%>
-          <%= f.date_field :from_date, class: "form-control",
-            value: @search_params[:from_date]
-          %>
-        </div>
-        <div class="item">
-          <%= f.label :to_date, t(".to_day") %>
-          <%= f.date_field :to_date, class: "form-control",
-            value: @search_params[:to_date]
-          %>
-        </div>
-        <%= f.submit "Search", class: "btn_box" %>
-      </div>
-    <% end %>
+<%= form_with url: order_history_path, method: :get do |f| %>
+  <div class="filter">
+    <div class="item">
+      <%= f.label :status, t(".status") %>
+      <%= f.select :status,
+        options_for_select(Order.statuses_i18n.unshift([t(".all"), ""]),
+        selected: params[:status]), {},
+        {class: "form-select"}
+      %>
+    </div>
+    <div class="item">
+      <%= f.label :from_date, t(".from_day")%>
+      <%= f.date_field :from_date, class: "form-control",
+        value: @search_params[:from_date]
+      %>
+    </div>
+    <div class="item">
+      <%= f.label :to_date, t(".to_day") %>
+      <%= f.date_field :to_date, class: "form-control",
+        value: @search_params[:to_date]
+      %>
+    </div>
+    <%= f.submit "Search", class: "btn_box" %>
+  </div>
+<% end %>

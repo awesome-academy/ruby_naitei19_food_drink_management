@@ -1,0 +1,63 @@
+<%= form_with model: @user do |f| %>
+  <div class="user-info-content">
+    <div class="title-user"><%= t ".update_avatar" %></div>
+    <div class="d-flex align-item-center gap-5">
+      <div class="avatar-circle">
+        <%= image_tag user_avatar(@user), id: "preview-img", class: "avatar-circle" %>
+      </div>
+      <div class="my-auto" >
+        <p class="error"><%= show_errors @user, :avatar %></p>
+        <%= f.file_field :avatar, class: "avatar-input", id: "avatar-input"
+        %>
+      </div>
+    </div>
+  </div>
+  <div class="px-4">
+    <div class="dropdown-divider"></div>
+  </div>
+
+  <div class="user-info-content">
+    <div class="title-user"><%= t ".change_info" %></div>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.label :first_name, t(".first_name") %>
+        <%= f.text_field :first_name, class: "form-control" %>
+        <p class="error"><%= show_errors @user, :first_name %></p>
+      </div>
+      <div class="col-md-6">
+        <%= f.label :last_name, t(".last_name") %>
+        <%= f.text_field :last_name, class: "form-control" %>
+        <p class="error"><%= show_errors @user, :last_name %></p>
+      </div>
+      <div class="col-md-6">
+        <%= f.label :phone, t(".phone") %>
+        <%= f.text_field :phone, class: "form-control" %>
+        <p class="error"><%= show_errors @user, :phone %></p>
+      </div>
+      <div class="col-md-6">
+        <%= f.label :email %>
+        <%= f.text_field :email, class: "form-control" %>
+        <p class="error"><%= show_errors @user, :email %></p>
+      </div>
+      <div class="col-md-6">
+        <%= f.label :password, t(".password") %>
+        <%= f.password_field :password, class: "form-control" %>
+        <p class="error"><%= show_errors @user, :password %></p>
+
+      </div>
+      <div class="col-md-6">
+        <%= f.label :password_confirmation, t(".password_confirmation") %>
+        <%= f.password_field :password_confirmation, class: "form-control" %>
+        <p class="error"><%= show_errors @user, :password_confirmation %></p>
+      </div>
+      <div class="col-md-12">
+        <%= f.label :address, t(".address") %>
+        <%= f.text_field :address, class: "form-control " %>
+        <p class="error"><%= show_errors @user, :address %></p>
+      </div>
+      <div class="col-md-3">
+        <%= f.submit t(".submit"), class: "submit-btn" %>
+      </div>
+    </div>
+  </div>
+<% end %>

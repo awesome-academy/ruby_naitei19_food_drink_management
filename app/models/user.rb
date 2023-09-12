@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   has_many :orders, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_one_attached :avatar
 
   validates :first_name, presence: true,
           length: {maximum: Settings.validates.users.name.max_length}
@@ -13,6 +14,9 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true,
             format: {with: Settings.validates.users.email.format},
             length: {maximum: Settings.validates.users.email.max_length}
+  validates :avatar, content_type: {in: Settings.validates.users.image_type,
+                                    message: :invalid_image_type},
+                    size: {less_than: 5.megabytes, message: :limit_size}
   has_secure_password
 
   class << self

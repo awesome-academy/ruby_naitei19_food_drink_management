@@ -1,0 +1,16 @@
+<div class="stat">
+  <div class="stat-header d-flex gap-4">
+    <%= image_tag user_avatar(current_user), class: "avatar-circle"%>
+    <div class="user-name">
+      <%= current_user.first_name %> <%= current_user.last_name %>
+    </div>
+  </div>
+  <div class="stat-item active">
+    <i class="bi bi-person-fill"></i>
+    <%= link_to t(".update_account"), "#" %>
+  </div>
+  <div class="stat-item">
+    <i class="bi bi-wallet-fill"></i>
+    <%= link_to t(".payment_method"), "#" %>
+  </div>
+</div>

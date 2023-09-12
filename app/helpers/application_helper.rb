@@ -13,4 +13,12 @@ module ApplicationHelper
 
     object.errors.full_messages_for(field_name)[0]
   end
+
+  def user_avatar user
+    if user.avatar.attached?
+      user.avatar
+    else
+      "default-avatar.png"
+    end
+  end
 end

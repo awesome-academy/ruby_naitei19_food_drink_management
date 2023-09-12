@@ -11,3 +11,13 @@
     background-color: darken($color: $col1, $amount: 5);
   }
 }
+
+@mixin avatar_circle($size) {
+  display: block;
+  width: $size;
+  height:$size;
+  border-radius: 50%;
+  overflow: hidden;
+  object-fit: cover;
+  background-color: #ebebeb;
+}
