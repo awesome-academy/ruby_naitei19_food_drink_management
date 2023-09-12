@@ -1,0 +1,18 @@
+<div class="order-container">
+  <h1><%= t("order.your_order") %></h1>
+  <% @order.each do |order_item| %>
+    <div class="order-item">
+      <h2><%= order_item["cuisine"]["name"] %></h2>
+      <p class="price"><%= t("order.price") %> <%= number_to_currency(order_item["cuisine"]["price"]) %></p>
+      <ul class="option-list">
+        <% order_item["selected_option_ids"].each do |option_id| %>
+          <% if option_id.to_i > 0 %>
+            <% option = Option.find(option_id.to_i) %>
+            <li><%= option.name %> - <%= t("order.price") %> <%= number_to_currency(option.price) %></li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <h3 class="total-price"><%= t("order.total_price") %><%= number_to_currency(calculate_total_price(@order)) %></h3>
+</div>

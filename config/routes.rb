@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     get "login", to: "sessions#new"
     post "login", to: "sessions#create"
     delete "logout", to: "sessions#destroy"
+    get "orders", to: "orders#show"
     resources :users, only: :create
     resources :categories, param: :slug, only: :show
     resources :cuisines, param: :slug, only: %i(index show)
@@ -12,5 +13,6 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :cuisines
     end
+    resources :options, only: %i(create new)
   end
 end

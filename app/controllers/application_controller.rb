@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include CuisineHelper
+  include OrderHelper
   before_action :set_locale
   include SessionsHelper
   include Pagy::Backend
