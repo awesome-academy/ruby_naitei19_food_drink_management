@@ -78,11 +78,13 @@ en:
     price: "Price:"
     discount: "Discount"
     not_have: "Don't have this cuisine"
+    add: "Add"
   category:
     no_have: "Don't have this category"
   sessions:
     user_not_found: "User not found"
     invalid_combination: "Invalid email/password combination"
+    user_not_logged_in: "You need to logged in"
     new:
       title: "Login"
       email: "Email"
@@ -134,3 +136,11 @@ en:
       pending: "Pending"
       accepted: "Accepted"
       rejected: "Rejected"
+    option_for: "Options for"
+    your_order: "Your order"
+    no_order: "Your order is empty"
+    total_price: "Total price"
+    add_order: "Add to order"
+    close: "Close"
+    add: "Add"
+    price: "Price:"

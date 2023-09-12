@@ -7,6 +7,7 @@
         <p class="cuisine-description"><%= @cuisine.description %></p>
         <p class="cuisine-discount"><%= @cuisine.discount %> % <%= t "cuisine.discount" %></p>
         <p class="cuisine-price"><strong><%= t "cuisine.price" %></strong> <%= number_to_currency(@cuisine.price) %></p>
+        <button class="btn btn-primary add-to-cart-button" data-cuisine-id="<%= @cuisine.id %>"><%= t("cuisine.add") %></button>
       </div>
     </div>
   </div>

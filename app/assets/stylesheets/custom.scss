@@ -624,3 +624,63 @@ h3 {
     color: $info;
   }
 }
+
+/* CSS cho pop-up */
+.popup {
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background-color: rgb(245, 240, 240);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Để nó hiển thị phía trên mọi thứ khác */
+}
+
+/* CSS cho form option */
+.option-form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  width: 60%; /* Chiếm 60% màn hình */
+  max-width: 400px; /* Giới hạn chiều rộng tối đa */
+  background-color: #888;
+}
+
+/* Css cho order  */
+
+.order-container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.order-item {
+  margin-bottom: 20px;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.option-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.option-list li {
+  margin-left: 20px;
+}
+
+.total-price {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

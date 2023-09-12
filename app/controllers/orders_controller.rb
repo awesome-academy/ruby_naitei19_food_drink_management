@@ -11,6 +11,14 @@ class OrdersController < ApplicationController
                           items: Settings.config.pagination.orders_per_page)
   end
 
+  def show
+    @order = session[:order]
+    return if @order
+
+    flash[:danger] = t "order.no_order"
+    redirect_to root_path
+  end
+
   private
   def search_params
     @search_params = params

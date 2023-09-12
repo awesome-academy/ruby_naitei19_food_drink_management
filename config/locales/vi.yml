@@ -85,11 +85,13 @@ vi:
     price: "Gia:"
     discount: "Giam gia"
     not_have: "Khong co mon an nay"
+    add: "Them"
   category:
     no_have: "Khong co danh muc nay"
   sessions:
     user_not_found: "Không tìm thấy người dùng"
     invalid_combination: "Kết hợp email/mật khẩu không hợp lệ"
+    user_not_logged_in: "Ban can phai dang nhap"
     new:
       title: "Đăng nhập"
       email: "Email"
@@ -138,3 +140,11 @@ vi:
       pending: "Đang xử lý"
       accepted: "Chấp nhận"
       rejected: "Đã Hủy"
+    option_for: "Lua chon them cho"
+    your_order: "Don hang cua ban"
+    no_order: "Don hang rong"
+    total_price: "Gia tong cong:"
+    add_order: "Them vao gio hang"
+    close: "Dong"
+    add: "Them"
+    price: "Gia:"
