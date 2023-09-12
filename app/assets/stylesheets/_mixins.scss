@@ -8,6 +8,6 @@
   border: none;
 
   &:hover {
-    background-color: darken($color: $col1, $amount: 15);
+    background-color: darken($color: $col1, $amount: 5);
   }
 }

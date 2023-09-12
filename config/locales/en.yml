@@ -89,7 +89,6 @@ en:
       password: "Password"
       submit: "Login"
       remember_me: "Remember me"
-
   admin:
     cuisines:
       index:
@@ -107,3 +106,31 @@ en:
       cuisine:
         delete: "Delete"
         edit: "Edit"
+  orders:
+    filter_form:
+      status: "Status"
+      from_day: "From day"
+      to_day: "To day"
+    order:
+      payment_in_cash: "Payement in cash"
+      re_order: "Re-order"
+      view_order_detail: "View order detail"
+      pending: "Pending"
+      accepted: "Accepted"
+      rejected: "Rejected"
+    index:
+      require_login: "You need to login first"
+      title: "History Order"
+      time: "Time"
+      address: "Address"
+      total_amount: "Total amount"
+      detail: "Detail"
+      all: "Tất cả"
+      pending: "Pending"
+      accepted: "Accepted"
+      rejected: "Rejected"
+  order:
+    status:
+      pending: "Pending"
+      accepted: "Accepted"
+      rejected: "Rejected"
