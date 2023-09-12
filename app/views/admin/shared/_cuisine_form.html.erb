@@ -1,0 +1,11 @@
+<%= bootstrap_form_for([:admin, @cuisine]) do |f| %>
+  <%= f.alert_message t("admin.shared.cuisine_form.please_fix_errors_below") %>
+  <%= f.text_field :name , label: t("admin.shared.cuisine_form.name") %>
+  <%= f.text_area :description , label: t("admin.shared.cuisine_form.description"), placeholder: t("admin.shared.cuisine_form.description_placeholder") %>
+  <%= f.text_field :price , label: t("admin.shared.cuisine_form.price") %>
+  <%= f.text_field :discount , label: t("admin.shared.cuisine_form.discount") %>
+  <%= f.file_field :image , label: t("admin.shared.cuisine_form.image") %>
+  <%= f.select :category_id, @categories, { label: "Choose a category:" }, { class: "selectpicker" } %>
+  <%= f.check_box :available , label: t("admin.shared.cuisine_form.available") %>
+  <%= f.submit t("admin.shared.cuisine_form.save"), class: "btn btn-primary", data: { turbo: false } %>
+<% end %>

@@ -1,4 +1,6 @@
 class Cuisine < ApplicationRecord
+  acts_as_paranoid
+
   belongs_to :category
   has_many :options, dependent: :destroy
   has_many :reviews, dependent: :destroy
@@ -8,9 +10,16 @@ class Cuisine < ApplicationRecord
     %w(name description price category_id)
   end
 
-  delegate :name, to: :category, prefix: true
-
   scope :order_by_created_at, ->{order(created_at: :desc)}
+
+  # Delegate category_name from category to Cuisine
+  delegate :name, to: :category, prefix: true, allow_nil: true
+
+  validate :image,
+           content_type: {in: Settings.config.image.acceptable_types,
+                          message: I18n.t("cuisines.must_be_a_PNG_JPG_JPEG")},
+                             size: {less_than: Settings.config.image.max_size,
+                                    message: I18n.t("cuisines.is_too_big")}
 
   validates :name, presence: true,
     length: {maximum: Settings.validates.cuisines.name.max_length}

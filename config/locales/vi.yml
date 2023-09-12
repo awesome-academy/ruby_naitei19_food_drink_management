@@ -86,6 +86,8 @@ vi:
     discount: "Giam gia"
     not_have: "Khong co mon an nay"
     add: "Them"
+    is_too_big: "qua lon (nho hon 5MB)"
+    must_be_a_PNG_JPG_JPEG: "phai la PNG, JPG, JPEG"
   category:
     no_have: "Khong co danh muc nay"
   sessions:
@@ -110,11 +112,44 @@ vi:
         title: "Quản lý Cuisine"
         back: "Quay lại"
         price: "Giá"
-        are_you_sure: "Bạn có chắc không?"
+        category: "Danh mục"
+      new: 
+        title: "Cuisine Mới"
+        submit: "Tạo Cuisine"
+        back: "Quay lại"
+      edit:
+        title: "Chỉnh sửa Cuisine"
+        submit: "Cập nhật Cuisine"
+        back: "Quay lại"
+        not_found: "Không tìm thấy cuisine"
+      create:
+        success: "Cuisine được tạo thành công"
+        fail: "Tạo cuisine thất bại"
+      update:
+        success: "Cuisine được cập nhật thành công"
+        fail: "Cập nhật cuisine thất bại"
+        not_found: "Không tìm thấy cuisine"
+      destroy:
+        success: "Cuisine đã bị xóa thành công"
+        fail: "Xóa cuisine thất bại"
+        not_found: "Không tìm thấy cuisine"
     shared:
       cuisine:
         edit: "Chỉnh sửa"
         delete: "Xóa"
+        are_you_sure: "Bạn có chắc không?"
+      cuisine_form:
+        name: "Tên"
+        description: "Mô tả"
+        category: "Danh mục"
+        price: "Giá"
+        image: "Hình ảnh"
+        discount: "Giảm giá"
+        choose_category: "Chọn danh mục"
+        description_placeholder: "Nhập mô tả ở đây"
+        available: "Còn hàng"
+        save: "Lưu"
+        please_fix_errors_below: "Vui lòng sửa các lỗi bên dưới"
   orders:
     filter_form:
       status: "Trạng thái"
