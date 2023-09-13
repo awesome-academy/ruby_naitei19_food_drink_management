@@ -19,6 +19,17 @@ class OrdersController < ApplicationController
     redirect_to root_path
   end
 
+  def delete_item
+    index = params[:index].to_i
+    if session[:order] && index >= 0 && index < session[:order].length
+      session[:order].delete_at(index)
+      @order = session[:order]
+      render json: {success: true}
+    else
+      render json: {success: false}
+    end
+  end
+
   private
   def search_params
     @search_params = params

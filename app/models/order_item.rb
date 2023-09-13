@@ -1,6 +1,7 @@
 class OrderItem < ApplicationRecord
   belongs_to :order
   belongs_to :cuisine
+  belongs_to :option
 
   validates :quantity, presence: true,
     numericality: {only_integer: true,

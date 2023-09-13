@@ -1,16 +1,17 @@
 <div class="order-container">
   <h1><%= t("order.your_order") %></h1>
-  <% @order.each do |order_item| %>
+
+  <% @order.each_with_index do |order_item, index| %>
     <div class="order-item">
-      <h2><%= order_item["cuisine"]["name"] %></h2>
-      <p class="price"><%= t("order.price") %> <%= number_to_currency(order_item["cuisine"]["price"]) %></p>
+      <h2><%= order_item["quantity"] %> x <%= order_item["cuisine"]["name"] %> </h2>
+      <button class="edit-order-item-button" data-index="<%= index %>"><%= t("order_item.edit") %></button>
+      <button class="delete-order-item-button" data-index="<%= index %>"><%= t("order_item.delete") %></button>
+      <p class="price"><%= t("order.price") %> <%= number_to_currency(calculate_price(order_item)) %></p>
       <ul class="option-list">
-        <% order_item["selected_option_ids"].each do |option_id| %>
-          <% if option_id.to_i > 0 %>
-            <% option = Option.find(option_id.to_i) %>
+          <% if order_item["selected_option_id"].to_i > 0 %>
+            <% option = Option.find(order_item["selected_option_id"].to_i) %>
             <li><%= option.name %> - <%= t("order.price") %> <%= number_to_currency(option.price) %></li>
           <% end %>
-        <% end %>
       </ul>
     </div>
   <% end %>

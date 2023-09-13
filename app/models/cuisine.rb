@@ -15,11 +15,14 @@ class Cuisine < ApplicationRecord
   # Delegate category_name from category to Cuisine
   delegate :name, to: :category, prefix: true, allow_nil: true
 
-  validate :image,
-           content_type: {in: Settings.config.image.acceptable_types,
-                          message: I18n.t("cuisines.must_be_a_PNG_JPG_JPEG")},
-                             size: {less_than: Settings.config.image.max_size,
-                                    message: I18n.t("cuisines.is_too_big")}
+  validates :image,
+            content_type: {in: Settings.config.image.acceptable_types,
+                           message: I18n.t("cuisines.must_be_a_PNG_JPG_JPEG")},
+                              size: {less_than: Settings
+                                .config
+                                .image.max_size
+                                .megabytes,
+                                     message: I18n.t("cuisines.is_too_big")}
 
   validates :name, presence: true,
     length: {maximum: Settings.validates.cuisines.name.max_length}
