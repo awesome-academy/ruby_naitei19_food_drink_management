@@ -6,7 +6,6 @@ vi:
       precision: 2
       separator: "."
       unit: "đ"
-
   activerecord:
     attributes:
       user:
@@ -14,6 +13,11 @@ vi:
         last_name: "Họ"
         email: "Email"
         password: "Mật khẩu"
+        avatar: "Ảnh"
+    errors:
+      messages:
+        invalid_image_type: "phải là định dạng hình ảnh hợp lệ"
+        limit_size:  "phải nhỏ hơn 5 MB"
   layouts:
     user:
       header:
@@ -59,6 +63,7 @@ vi:
         cuisines: "Món ăn"
         categories: "Danh mục"
   users:
+    user_not_found: "Không tìm thấy người dùng"
     new:
       title: "Đăng ký"
       first_name: "Tên"
@@ -69,6 +74,24 @@ vi:
       submit: "Đăng ký"
     create:
       success: "Tạo tài khoản thành công"
+    edit:
+      title: "Cập nhật thông tin"
+      profile_header: "Thông tin người dùng"
+    update:
+      success: "Cập nhật thông tin thành công"
+    stats:
+      update_account: "Cập nhật tài khoản"
+      payment_method: "Phương thức thanh toán"
+    form:
+      update_avatar: "Thay đổi ảnh"
+      change_info: "Cập nhật thông tin"
+      first_name: "Tên"
+      last_name: "Họ"
+      phone: "Số điện thoại"
+      password: "Mật khẩu"
+      password_confirmation: "Nhập lại mật khẩu"
+      address: "Địa chỉ"
+      submit: "Lưu thay đổi"
   category:
     menu: "Thuc don"
     menu_explore: "Kham pha thuc don tuyet voi nhat cua chung toi"

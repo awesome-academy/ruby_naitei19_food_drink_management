@@ -1,6 +1,6 @@
  <tr class="order-item" >
   <th class="align-middle" scope="row"> <%= order_counter + 1 %> </th>
-  <td class="align-middle"><%= order.created_at %></td>
+  <td class="align-middle"><%= order.created_at.strftime("%d/%m/%Y %H:%M") %></td>
   <td class="align-middle"><%= order.address %></td>
   <td class="align-middle">
     <div class="total-amount">

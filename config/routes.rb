@@ -6,10 +6,10 @@ Rails.application.routes.draw do
     post "login", to: "sessions#create"
     delete "logout", to: "sessions#destroy"
     get "orders", to: "orders#show"
-    resources :users, only: :create
+    get "order-history", to: "orders#index"
+    resources :users, only: %i(create edit update)
     resources :categories, param: :slug, only: :show
     resources :cuisines, param: :slug, only: %i(index show)
-    resources :orders, only: :index
     namespace :admin do
       resources :cuisines, param: :slug, except: :show
     end

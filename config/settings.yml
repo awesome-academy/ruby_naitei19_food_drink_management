@@ -5,6 +5,7 @@ validates:
       max_length: 255
     name:
       max_length: 50
+    image_type: ["image/jpeg", "image/gif", "image/png"]
   categories:
     name:
       max_length: 50
