@@ -5,7 +5,7 @@
   <% cuisine.options.each do |option| %>
     <% if option.name %>
       <div class="form-check">
-        <%= form.check_box :selected_option_ids, { multiple: true, class: 'form-check-input' }, option.id %>
+        <%= form.radio_button :selected_option_id, option.id, class: 'form-check-input' %>
         <%= form.label nil, option.name, class: 'form-check-label' %>
         <span class="option-price"><%= t("order.price") %> <%= number_to_currency(option.price) %></span>
       </div>

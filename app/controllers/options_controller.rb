@@ -1,10 +1,11 @@
 class OptionsController < ApplicationController
   before_action :find_cuisine, only: %i(create new)
   def create
-    selected_option_ids = option_params[:selected_option_ids]
+    selected_option_id = option_params[:selected_option_id]
     order_item_data = {
+      quantity: 1,
       cuisine: @cuisine,
-      selected_option_ids:
+      selected_option_id:
     }
     session[:order] ||= []
     session[:order].push(order_item_data)
@@ -19,7 +20,7 @@ class OptionsController < ApplicationController
   private
 
   def option_params
-    params.require(:option).permit(:cuisine_id, selected_option_ids: [])
+    params.require(:option).permit(:cuisine_id, :selected_option_id)
   end
 
   def find_cuisine

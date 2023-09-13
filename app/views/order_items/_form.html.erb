@@ -1,0 +1,24 @@
+<%= form_for @order_item do |form| %>
+  <h2> <%= t("order_item.edit_for") %> <%= @order_item.cuisine.name %></h2>
+
+  <div class="field">
+    <%= form.label :quantity %><br>
+    <%= form.number_field :quantity, class: "form-control" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :option_id, t("order_item.option") %><br>
+    <% @order_item.cuisine.options.each do |option| %>
+      <%= form.radio_button :option_id, option.id %>
+      <%= form.label :option_id, option.name %><br>
+    <% end %>
+  </div>
+
+  <%= form.hidden_field :index, value: params[:index] %>
+
+
+  <div class="actions">
+    <%= form.submit t("order_item.save") %>
+    <%= button_tag t("order.close"), type: "button", class: "btn btn-secondary close-popup-button" %>
+  </div>
+<% end %>

@@ -129,7 +129,7 @@ en:
         back: "Back"
         price: "Price"
         category: "Category"
-      new: 
+      new:
         title: "New Cuisine"
         submit: "Create Cuisine"
         back: "Back"
@@ -202,3 +202,11 @@ en:
     close: "Close"
     add: "Add"
     price: "Price:"
+  order_item:
+    edit_for: "Edit for Cuisine: "
+    save: "Save"
+    option: "Options"
+    edit: "Edit"
+    delete: "Delete"
+  option:
+    not_have: "Don't have this option"

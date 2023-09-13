@@ -136,7 +136,7 @@ vi:
         back: "Quay lại"
         price: "Giá"
         category: "Danh mục"
-      new: 
+      new:
         title: "Cuisine Mới"
         submit: "Tạo Cuisine"
         back: "Quay lại"
@@ -206,3 +206,11 @@ vi:
     close: "Dong"
     add: "Them"
     price: "Gia:"
+  order_item:
+    edit_for: "Sua cho san pham: "
+    save: "Luu"
+    option: "Options"
+    edit: "Sua"
+    delete: "Xoa"
+  option:
+    not_have: "Khong co option nay"
