@@ -149,6 +149,22 @@ en:
         success: "Cuisine deleted successfully"
         fail: "Cuisine deleted failed"
         not_found: "Cuisine not found"
+        are_you_sure: "Are you sure?"
+    categories:
+      not_found: "Category not found"
+      index:
+        name: "Name"
+        description: "Description"
+        actions: "Actions"
+        new: "New Category"
+        title: "Categories Management"
+        back: "Back"
+        are_you_sure: "Are you sure?"
+        cuisines_count: "Cuisines Count"
+        slug: "Slug"
+      destroy:
+        success: "Category deleted successfully"
+        fail: "Category deleted fail"
     shared:
       cuisine:
         delete: "Delete"
@@ -166,6 +182,14 @@ en:
         available: "Available"
         save: "Save"
         please_fix_errors_below: "Please fix errors below"
+      category:
+        delete: "Delete"
+        edit: "Edit"
+        are_you_sure: "Are you sure?"
+      cuisine_search_bar:
+        search: "Search"
+      category_search_bar:
+        search: "Search"
   orders:
     filter_form:
       status: "Status"

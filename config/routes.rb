@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     resources :cuisines, param: :slug, only: %i(index show)
     namespace :admin do
       resources :cuisines, param: :slug, except: :show
+      resources :categories, param: :slug
     end
     resources :options, only: %i(create new)
     resources :order_items, only: %i(create new)

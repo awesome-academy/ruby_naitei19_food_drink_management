@@ -19,16 +19,16 @@
         <%= t('.users') %>
       </a></li>
     <li class="nav-item">
-      <a class="nav-link" href="typography.html">
+      <%= link_to admin_cuisines_path, class: "nav-link" do %>
         <i class="bi bi-cart nav-icon"></i>
         <%= t('.cuisines') %>
-      </a>
+      <% end %>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="typography.html">
+      <%= link_to admin_categories_path, class: "nav-link" do %>
         <i class="bi bi-tags nav-icon"></i>
         <%= t('.categories') %>
-      </a>
+      <% end %>
     </li>
   </ul>
   <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>

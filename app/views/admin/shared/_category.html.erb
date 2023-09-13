@@ -1,0 +1,8 @@
+<tr>
+  <td><%= link_to category.name, edit_admin_category_path(slug: category.slug) %></td>
+  <td><%= category.slug %></td>
+  <td><%= category.cuisines.count %></td>
+  <td class="operations">
+    <%= link_to t(".delete"), admin_category_path(slug: category.slug), data: {"turbo-method": :delete, turbo_confirm: t("admin.shared.category.are_you_sure") }, class: "btn btn-danger" %>
+  </td>
+</tr>

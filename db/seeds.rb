@@ -24,7 +24,7 @@ cuisine1 = Cuisine.create(
   price: 10,
   discount: 0,
   available: true,
-  category: category1 # Liên kết cuisine với category đã tạo
+  category: category1 
 )
 cuisine1.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
@@ -35,7 +35,7 @@ cuisine2 = Cuisine.create(
   price: 12,
   discount: 0,
   available: true,
-  category: category1 # Liên kết cuisine với category đã tạo
+  category: category1 
 )
 cuisine2.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
@@ -46,7 +46,7 @@ cuisine3 = Cuisine.create(
   price: 12,
   discount: 0,
   available: false,
-  category: category1 # Liên kết cuisine với category đã tạo
+  category: category1 
 )
 cuisine3.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
@@ -57,7 +57,7 @@ cuisine4 = Cuisine.create(
   price: 12,
   discount: 0,
   available: true,
-  category: category2 # Liên kết cuisine với category đã tạo
+  category: category2
 )
 cuisine4.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
@@ -68,7 +68,7 @@ cuisine5 = Cuisine.create(
   price: 12,
   discount: 0,
   available: false,
-  category: category2 # Liên kết cuisine với category đã tạo
+  category: category2 
 )
 cuisine5.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
@@ -79,7 +79,7 @@ cuisine6 = Cuisine.create(
   price: 12,
   discount: 0,
   available: true,
-  category: category3 # Liên kết cuisine với category đã tạo
+  category: category3
 )
 cuisine6.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
@@ -110,6 +110,8 @@ User.create(first_name: first_name, last_name: last_name, email: email, password
   User.create(first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password_confirmation, is_actived: is_actived, phone: phone, address: address, role: role, avatar: avatar)
 end
 
+#create default category
+Category.create(name: "Default", slug: "default")
 
 20.times do
   name = Faker::Food.ethnic_category
