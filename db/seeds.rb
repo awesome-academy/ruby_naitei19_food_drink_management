@@ -122,7 +122,9 @@ end
   price = Faker::Number.between(from: 10000, to: 100000)
   discount = Faker::Number.between(from: 0, to: 100)
   available = true
-  Cuisine.create(name: name, slug: name.parameterize, description: description, price: price, discount: discount, available: available, category_id: Faker::Number.between(from: 1, to: 20))
+  c = Cuisine.create(name: name, slug: name.parameterize, description: description, price: price, discount: discount, available: available, category_id: Faker::Number.between(from: 1, to: 20))
+  c.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
+end
 
 Cuisine.all.each do |cuisine|
   3.times do |i|

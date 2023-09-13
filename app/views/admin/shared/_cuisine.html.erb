@@ -1,14 +1,12 @@
 <tr>
-  <td><%= image_tag "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDU6jyhFSKHkeRWxj1qe5q-FqO8tcVuRbT2g&usqp=CAU", width: 100 %></td>
+  <td><%= image_tag cuisine_image(cuisine), class: cuisine_image_class(cuisine) , width: 100 %></td>
   <td><%= link_to cuisine.name, admin_cuisine_path(cuisine) %></td>
+  <td><%= cuisine.category_name %></td>
   <td><%= cuisine.description %></td>
   <td><%= number_to_currency(cuisine.price) %></td>
+  <td><%= "#{cuisine.discount}%" %></td>
   <td class="operations">
-    <button type="button" class="btn btn-success">
-      <%= link_to t(".edit"), edit_admin_cuisine_path(cuisine) %>
-    </button>
-    <button type="button" class="btn btn-danger">
-      <%= link_to t(".delete"), admin_cuisine_path(cuisine), method: :delete, data: { confirm: t(".are_you_sure") } %>
-    </button>
+    <%= link_to t(".edit"), edit_admin_cuisine_path(slug: cuisine.slug), class: "btn btn-primary" %>
+    <%= link_to t(".delete"), admin_cuisine_path(slug: cuisine.slug), data: {"turbo-method": :delete, turbo_confirm: t("admin.shared.cuisine.are_you_sure") }, class: "btn btn-danger" %>
   </td>
 </tr>

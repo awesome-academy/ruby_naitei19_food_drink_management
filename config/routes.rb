@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     resources :cuisines, param: :slug, only: %i(index show)
     resources :orders, only: :index
     namespace :admin do
-      resources :cuisines
+      resources :cuisines, param: :slug, except: :show
     end
     resources :options, only: %i(create new)
   end

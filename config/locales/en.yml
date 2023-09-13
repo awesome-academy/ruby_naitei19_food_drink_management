@@ -79,6 +79,8 @@ en:
     discount: "Discount"
     not_have: "Don't have this cuisine"
     add: "Add"
+    is_too_big: "is too big (should be less than 5MB)"
+    must_be_a_PNG_JPG_JPEG: "must be a PNG, JPG, JPEG"
   category:
     no_have: "Don't have this category"
   sessions:
@@ -103,11 +105,44 @@ en:
         title: "Cuisines Management"
         back: "Back"
         price: "Price"
-        are_you_sure: "Are you sure?"
+        category: "Category"
+      new: 
+        title: "New Cuisine"
+        submit: "Create Cuisine"
+        back: "Back"
+      edit:
+        title: "Edit Cuisine"
+        submit: "Update Cuisine"
+        back: "Back"
+        not_found: "Cuisine not found"
+      create:
+        success: "Cuisine created successfully"
+        fail: "Cuisine created failed"
+      update:
+        success: "Cuisine updated successfully"
+        fail: "Cuisine updated failed"
+        not_found: "Cuisine not found"
+      destroy:
+        success: "Cuisine deleted successfully"
+        fail: "Cuisine deleted failed"
+        not_found: "Cuisine not found"
     shared:
       cuisine:
         delete: "Delete"
         edit: "Edit"
+        are_you_sure: "Are you sure?"
+      cuisine_form:
+        name: "Name"
+        description: "Description"
+        category: "Category"
+        price: "Price"
+        image: "Image"
+        discount: "Discount"
+        choose_category: "Choose Category"
+        description_placeholder: "Enter description here"
+        available: "Available"
+        save: "Save"
+        please_fix_errors_below: "Please fix errors below"
   orders:
     filter_form:
       status: "Status"
