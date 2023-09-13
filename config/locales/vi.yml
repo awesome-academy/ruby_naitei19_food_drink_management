@@ -156,6 +156,22 @@ vi:
         success: "Cuisine đã bị xóa thành công"
         fail: "Xóa cuisine thất bại"
         not_found: "Không tìm thấy cuisine"
+        are_you_sure: "Bạn có chắc không?"
+    categories:
+      not_found: "Không tìm thấy danh mục"
+      index:
+        name: "Tên"
+        description: "Mô tả"
+        actions: "Hành động"
+        new: "Thêm danh mục mới"
+        title: "Quản lý Danh mục"
+        back: "Quay lại"
+        are_you_sure: "Bạn có chắc chắn không?"
+        cuisines_count: "Số lượng món ăn"
+        slug: "Đường dẫn"
+      destroy:
+        success: "Xóa thành công"
+        error: "Xóa thất bại"
     shared:
       cuisine:
         edit: "Chỉnh sửa"
@@ -173,6 +189,15 @@ vi:
         available: "Còn hàng"
         save: "Lưu"
         please_fix_errors_below: "Vui lòng sửa các lỗi bên dưới"
+        are_you_sure: "Bạn có chắc chắn không?"
+      category:
+        delete: "Xóa"
+        edit: "Chỉnh sửa"
+        are_you_sure: "Bạn có chắc chắn không?"
+      cuisine_search_bar:
+        search: "Tìm kiếm"
+      category_search_bar:
+        search: "Tìm kiếm"
   orders:
     filter_form:
       status: "Trạng thái"

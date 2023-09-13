@@ -44,6 +44,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_12_063913) do
     t.string "slug"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "deleted_at"
+    t.index ["deleted_at"], name: "index_categories_on_deleted_at"
     t.index ["slug"], name: "index_categories_on_slug", unique: true
   end
 

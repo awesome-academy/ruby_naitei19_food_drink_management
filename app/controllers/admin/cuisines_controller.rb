@@ -1,6 +1,4 @@
 class Admin::CuisinesController < ApplicationController
-  include Admin::AdminHelper
-
   before_action :find_cuisine, only: %i(edit update destroy)
   before_action :load_categories, only: %i(new edit)
 
