@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get "order-history", to: "orders#index"
     resources :users, only: %i(create edit update)
     get "orders/delete_item", to: "orders#delete_item"
+    get "orders/delete", to: "orders#delete"
     resources :categories, param: :slug, only: :show
     resources :cuisines, param: :slug, only: %i(index show)
     namespace :admin do

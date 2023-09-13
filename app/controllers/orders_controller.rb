@@ -30,6 +30,16 @@ class OrdersController < ApplicationController
     end
   end
 
+  def delete
+    if session.delete(:order)
+      @order = nil
+      flash[:success] = t "order.delete_success"
+      redirect_to root_path
+    else
+      flash[:danger] = t "order.delete_fail"
+    end
+  end
+
   private
   def search_params
     @search_params = params
