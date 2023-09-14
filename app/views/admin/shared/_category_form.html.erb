@@ -1,0 +1,5 @@
+<%= bootstrap_form_for([:admin, @category], url: content_for(:custom_path)) do |f| %>
+  <%= f.alert_message t("admin.shared.category_form.please_fix_errors_below") %>
+  <%= f.text_field :name , label: t("admin.shared.category_form.name") %>
+  <%= f.submit t("admin.shared.category_form.save"), class: "btn btn-primary", data: { turbo: false } %>
+<% end %>

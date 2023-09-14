@@ -162,6 +162,22 @@ en:
         are_you_sure: "Are you sure?"
         cuisines_count: "Cuisines Count"
         slug: "Slug"
+      new:
+        title: "New Category"
+        back: "Back"
+        submit: "Submit"
+      create:
+        duplicate_slug: "Slug has already been taken"
+        success: "Category created successfully"
+        fail: "Category created fail"
+      edit:
+        title: "Edit Category"
+        back: "Back"
+        submit: "Submit"
+      update:
+        success: "Category updated successfully"
+        fail: "Category updated fail"
+        duplicate_slug: "Slug has already been taken"
       destroy:
         success: "Category deleted successfully"
         fail: "Category deleted fail"
@@ -186,6 +202,11 @@ en:
         delete: "Delete"
         edit: "Edit"
         are_you_sure: "Are you sure?"
+      category_form:
+        name: "Name"
+        save: "Save"
+        back: "Back"
+        please_fix_errors_below: "Please fix errors below"
       cuisine_search_bar:
         search: "Search"
       category_search_bar:

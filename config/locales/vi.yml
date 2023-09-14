@@ -169,6 +169,22 @@ vi:
         are_you_sure: "Bạn có chắc chắn không?"
         cuisines_count: "Số lượng món ăn"
         slug: "Đường dẫn"
+      create:
+        duplicate_slug: "Đường dẫn đã tồn tại"
+        success: "Tạo danh mục thành công"
+        fail: "Tạo danh mục thất bại"
+      new:
+        title: "Thêm danh mục mới"
+        submit: "Thêm"
+        back: "Quay lại"
+      edit:
+        title: "Chỉnh sửa danh mục"
+        submit: "Lưu"
+        back: "Quay lại"
+      update:
+        success: "Cập nhật thành công"
+        fail: "Cập nhật thất bại"
+        duplicate_slug: "Đường dẫn đã tồn tại"
       destroy:
         success: "Xóa thành công"
         error: "Xóa thất bại"
@@ -194,6 +210,11 @@ vi:
         delete: "Xóa"
         edit: "Chỉnh sửa"
         are_you_sure: "Bạn có chắc chắn không?"
+      category_form:
+        name: "Tên"
+        save: "Lưu"
+        back: "Quay lại"
+        please_fix_errors_below: "Vui lòng sửa các lỗi bên dưới"
       cuisine_search_bar:
         search: "Tìm kiếm"
       category_search_bar:
