@@ -1,17 +1,16 @@
 <%= form_with(model: @option, url: options_path, local: true) do |form| %>
   <% cuisine = @option.cuisine %>
   <h3> <%= t("order.option_for") %> <%= cuisine.name %>:</h3>
-
-  <% cuisine.options.each do |option| %>
+  <% cuisine.options.each_with_index do |option, index| %>
     <% if option.name %>
       <div class="form-check">
-        <%= form.radio_button :selected_option_id, option.id, class: 'form-check-input' %>
+        <%= form.radio_button :selected_option_id, option.id, class: 'form-check-input', checked: (index == 0) %>
         <%= form.label nil, option.name, class: 'form-check-label' %>
         <span class="option-price"><%= t("order.price") %> <%= number_to_currency(option.price) %></span>
       </div>
     <% end %>
   <% end %>
   <%= form.hidden_field :cuisine_id, value: cuisine.id %>
-  <%= form.submit t("order.add_order"), class: "btn btn-primary" %>
+  <%= form.submit t("order.add_order"), class: "btn btn-primary submit-button" %>
   <%= button_tag t("order.close"), type: "button", class: "btn btn-secondary close-popup-button" %>
 <% end %>

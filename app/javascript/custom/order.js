@@ -29,4 +29,12 @@ document.addEventListener("turbo:load", function() {
       selected_element.remove()
     }
   });
+
+  // Event for close
+  document.addEventListener("click", function(event) {
+    if (event.target.classList.contains("submit-button")) {
+      let selected_element = document.querySelector(".popup")
+      selected_element.className = "popupnon"
+    }
+  });
 });

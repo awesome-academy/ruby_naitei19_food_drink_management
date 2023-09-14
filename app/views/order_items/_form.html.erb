@@ -1,3 +1,4 @@
+<div id="form-save">
 <%= form_for @order_item do |form| %>
   <h2> <%= t("order_item.edit_for") %> <%= @order_item.cuisine.name %></h2>
 
@@ -18,7 +19,8 @@
 
 
   <div class="actions">
-    <%= form.submit t("order_item.save") %>
+    <%= form.submit t("order_item.save"), onclick: "handleCloseModal()" %>
     <%= button_tag t("order.close"), type: "button", class: "btn btn-secondary close-popup-button" %>
   </div>
 <% end %>
+</div>

@@ -30,3 +30,10 @@ document.addEventListener("turbo:load", function() {
     }
   });
 });
+
+function handleCloseModal(){
+  let selected_element = document.querySelector(".popup")
+  selected_element.className = "popupnon"
+}
+
+window.handleCloseModal = handleCloseModal
