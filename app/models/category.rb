@@ -13,4 +13,5 @@ length: {maximum: Settings.validates.categories.name.max_length}
 length: {maximum: Settings.validates.categories.slug.max_length}
 
   scope :sort_by_name, ->{order(name: :asc)}
+  scope :by_slug, ->(slug){where(slug:)}
 end

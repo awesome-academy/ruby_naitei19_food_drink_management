@@ -1,7 +1,7 @@
 class Admin::CategoriesController < ApplicationController
   layout "admin"
 
-  before_action :find_category, only: %i(destroy)
+  before_action :find_category, only: %i(edit update destroy)
   before_action :update_related_cuisines, only: %i(destroy)
 
   def index
@@ -17,8 +17,28 @@ class Admin::CategoriesController < ApplicationController
   def create
     @category = Category.new(categories_params)
     @category.slug = @category.name.parameterize
-    @category.save
-    redirect_to admin_categories_path
+    if @category.save
+      flash[:success] = t "admin.categories.create.success"
+      redirect_to admin_categories_path
+    else
+      flash[:danger] = t "admin.categories.create.fail"
+      render :new
+    end
+  end
+
+  def edit; end
+
+  def update
+    new_slug = categories_params[:name].parameterize
+    handle_slug_change(new_slug)
+
+    if @category.update(categories_params)
+      flash[:success] = t "admin.categories.update.success"
+      redirect_to admin_categories_path
+    else
+      flash[:danger] = t "admin.categories.update.fail"
+      render :edit
+    end
   end
 
   def destroy
@@ -31,6 +51,10 @@ class Admin::CategoriesController < ApplicationController
   end
 
   private
+
+  def categories_params
+    params.require(:category).permit(:name)
+  end
 
   def find_category
     @category = Category.find_by(slug: params[:slug])
@@ -46,5 +70,16 @@ class Admin::CategoriesController < ApplicationController
     default_category ||= Category.create(name: "Default", slug: "default")
 
     cuisines_to_update.update_all(category_id: default_category.id)
+  end
+
+  def handle_slug_change new_slug
+    return unless new_slug != @category.slug
+
+    if Category.by_slug(new_slug).any?
+      flash[:danger] = t "admin.categories.update.duplicate_slug"
+      render :edit
+    else
+      @category.slug = new_slug
+    end
   end
 end
