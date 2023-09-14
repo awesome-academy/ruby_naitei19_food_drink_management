@@ -226,6 +226,9 @@ en:
     close: "Close"
     add: "Add"
     price: "Price:"
+    delete_all: "Delete all"
+    delete_success: "Deleted successfully"
+    delete_fail: "Delete failed"
   order_item:
     edit_for: "Edit for Cuisine: "
     save: "Save"

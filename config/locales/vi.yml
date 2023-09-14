@@ -231,6 +231,9 @@ vi:
     close: "Dong"
     add: "Them"
     price: "Gia:"
+    delete_all: "Xoa tat ca"
+    delete_success: "Xoa thanh cong"
+    delete_fail: "Xoa that bai"
   order_item:
     edit_for: "Sua cho san pham: "
     save: "Luu"
