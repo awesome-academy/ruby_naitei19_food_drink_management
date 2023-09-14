@@ -1,0 +1,57 @@
+<% provide :title, t(".title") %>
+
+<section class="payment-section pt-3 pb-5">
+  <h3 class="text-center mb-3"></h3>
+  <div class="wrapper">
+    <div class="row gx-4">
+      <div class="col-md-8 px-5">
+        <% if current_order %>
+          <table class="table orderlist">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col" class="item-name"><% t ".cuisine" %></th>
+                <th scope="col"><%= t ".price" %></th>
+                <th scope="col"><%= t ".quantity" %></th>
+                <th scope="col"><%= t ".discount" %></th>
+                <th scope="col"><%= t ".total" %></th>
+              </tr>
+            </thead>
+            <tbody>
+            <% current_order.map do |order_item| %>
+              <tr>
+                <td>
+                  <%= image_tag Cuisine.find_by(id: order_item["cuisine"]["id"]).image,
+                  class: "cuisine-img" %>
+                </td>
+                <td class="align-middle item-name">
+                  <%= order_item["cuisine"]["name"] %>
+                  <span class="option">
+                    <%= Option.find_by(id: order_item["selected_option_id"])&.name %>
+                  </span>
+                </td>
+                <td class="align-middle">
+                  <%= number_to_currency(order_item["cuisine"]["price"]) %>
+                </td>
+                <td class="align-middle"><%= order_item["quantity"] %></td>
+                <td class="align-middle"><%= order_item["cuisine"]["discount"]%> % </td>
+                <td class="order-item-price align-middle">
+                  <%= number_to_currency(calculate_price(order_item)) %>
+                </td>
+              </tr>
+            <% end %>
+            </tbody>
+          </table>
+          <div class="order-amount">
+            <span><%= t ".total" %>:</span>
+            <%= number_to_currency(calculate_total_price(current_order))%>
+          </div>
+        <% end %>
+      </div>
+
+      <div class="col-md-4 box">
+        <%= render "order_form" %>
+      </div>
+    </div>
+  </div>
+</section>

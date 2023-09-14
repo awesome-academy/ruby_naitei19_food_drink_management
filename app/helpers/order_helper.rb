@@ -14,4 +14,8 @@ module OrderHelper
     price = order_item["cuisine"]["price"]
     price * quantity
   end
+
+  def current_order
+    session[:order]
+  end
 end

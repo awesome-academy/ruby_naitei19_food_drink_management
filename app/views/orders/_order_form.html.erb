@@ -1,0 +1,39 @@
+<%= form_with model: @order do |f| %>
+  <div class="delivery-info">
+    <h5 class="text-center mb-2"><%= t ".delivery" %></h5>
+    <div class="d-flex align-items-center gap-3">
+      <i class="bi bi-geo-alt"></i>
+      <%= f.text_field :address, class: "form-control" %>
+    </div>
+    <p class="error"><%= show_errors @order, :address %></p>
+    <div class="d-flex align-items-center gap-3">
+      <i class="bi bi-telephone"></i>
+      <%= f.text_field :phone, class: "form-control" %>
+    </div>
+    <p class="error"><%= show_errors @order, :phone %></p>
+    <div class="d-flex align-items-center gap-3">
+      <i class="bi bi-chat-right-text"></i>
+      <%= f.text_field :note, class: "form-control" %>
+    </div>
+    <p class="error"><%= show_errors @order, :note %></p>
+  </div>
+  <div class="dropdown-divider"></div>
+  <div class="payment">
+    <h5 class="text-center mb-2"><%= t ".payment_method" %></h5>
+    <%= f.fields_for :payment do |ff| %>
+      <% Payment.methods_i18n.map do |method| %>
+        <%= ff.label :method, value: method[1] do %>
+          <%= ff.radio_button :method, method[1],
+          checked: method[2] == 0,
+          class: "payment-input" %>
+          <div class="payment-box">
+            <%= image_tag "#{method[1]}",
+            class: "method-img" %>
+            <span class="method-name"><%= method[0] %></span>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+    <%= f.submit t(".submit"), class: "btn-submit" %>
+  </div>
+<% end %>

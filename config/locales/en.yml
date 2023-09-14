@@ -269,6 +269,19 @@ en:
       pending: "Pending"
       accepted: "Accepted"
       rejected: "Rejected"
+    create:
+      success: "Order was successfully created"
+    new:
+      title: "Place order"
+      cuisine: "Cuisine"
+      price: "Price"
+      quantity: "Quantity"
+      discount: "Discount"
+      total: "Total"
+    order_form:
+      delivery: "Delivery"
+      payment_method: "Payment Method"
+      submit: "Place order"
   order:
     status:
       pending: "Pending"
@@ -293,3 +306,8 @@ en:
     delete: "Delete"
   option:
     not_have: "Don't have this option"
+  payment:
+    method:
+      cash: "Pay by Cash"
+      credit_card: "Pay by ATM/VISA"
+      paypal: "Pay by PayPal"

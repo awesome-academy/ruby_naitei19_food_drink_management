@@ -14,6 +14,10 @@ vi:
         email: "Email"
         password: "Mật khẩu"
         avatar: "Ảnh"
+      order:
+        address: "Địa chỉ"
+        phone: "Số điện thoại"
+        note: "Ghi chú"
     errors:
       messages:
         invalid_image_type: "phải là định dạng hình ảnh hợp lệ"
@@ -276,6 +280,19 @@ vi:
       total_amount: "Tổng tiền"
       detail: "Chi tiết"
       all: "Tất cả"
+    create:
+      success: "Đặt hàng thành công"
+    new:
+      title: "Đặt hàng"
+      cuisine: "Sản phẩm"
+      price: "Giá"
+      quantity: "Số lượng"
+      discount: "Khuyến mại"
+      total: "Tổng"
+    order_form:
+      delivery: "Thông tin giao hàng"
+      payment_method: "Phương thức thanh toán"
+      submit: "Đặt hàng"
   order:
     status:
       pending: "Đang xử lý"
@@ -300,3 +317,8 @@ vi:
     delete: "Xoa"
   option:
     not_have: "Khong co option nay"
+  payment:
+    method:
+      cash: "Thanh toán bằng tiền mặt"
+      credit_card: "Thanh toán bằng ATM/VISA"
+      paypal: "Thanh toán bằng PayPal"
