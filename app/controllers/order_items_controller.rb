@@ -9,11 +9,14 @@ class OrderItemsController < ApplicationController
 
   def create
     index = params[:order_item][:index]
-    order_item_tmp = session[:order][index.to_i]
-    order_item_tmp["quantity"] = order_item_params[:quantity]
-    order_item_tmp["selected_option_id"] = order_item_params[:option_id]
+    order_item_tmp = create_order_item_tmp index
     session[:order][index.to_i] = order_item_tmp
     @order = session[:order]
+
+    respond_to do |format|
+      format.html{redirect_to orders_path}
+      format.js
+    end
   end
 
   private
@@ -39,5 +42,12 @@ class OrderItemsController < ApplicationController
 
     flash[:danger] = t "option.no_have"
     redirect_to root_path
+  end
+
+  def create_order_item_tmp index
+    order_item_tmp = session[:order][index.to_i]
+    order_item_tmp["quantity"] = order_item_params[:quantity]
+    order_item_tmp["selected_option_id"] = order_item_params[:option_id]
+    order_item_tmp
   end
 end
