@@ -111,6 +111,8 @@ vi:
     add: "Them"
     is_too_big: "qua lon (nho hon 5MB)"
     must_be_a_PNG_JPG_JPEG: "phai la PNG, JPG, JPEG"
+    out_of_stock: "Het hang"
+    available: "Con hang"
   category:
     no_have: "Khong co danh muc nay"
   sessions:

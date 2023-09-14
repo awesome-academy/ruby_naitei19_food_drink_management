@@ -11,8 +11,8 @@ class OrderItemsController < ApplicationController
     index = params[:order_item][:index]
     order_item_tmp = create_order_item_tmp index
     session[:order][index.to_i] = order_item_tmp
+    check_duplicate index, order_item_tmp
     @order = session[:order]
-
     respond_to do |format|
       format.html{redirect_to orders_path}
       format.js
@@ -46,8 +46,29 @@ class OrderItemsController < ApplicationController
 
   def create_order_item_tmp index
     order_item_tmp = session[:order][index.to_i]
-    order_item_tmp["quantity"] = order_item_params[:quantity]
+    order_item_tmp["quantity"] = order_item_params[:quantity].to_i
     order_item_tmp["selected_option_id"] = order_item_params[:option_id]
     order_item_tmp
+  end
+
+  def compare_item_cuisine? existing_order_item, order_item_tmp
+    existing_order_item["cuisine"]["id"] == order_item_tmp["cuisine"]["id"]
+  end
+
+  def compare_item_option? existing_order_item, order_item_tmp
+    existing_order_item["selected_option_id"] == order_item_tmp[
+      "selected_option_id"]
+  end
+
+  def check_duplicate index, order_item_tmp
+    session[:order].each_with_index do |existing_order_item, existing_index|
+      next unless existing_index != index.to_i &&
+                  compare_item_cuisine?(existing_order_item, order_item_tmp) &&
+                  compare_item_option?(existing_order_item, order_item_tmp)
+
+      existing_order_item["quantity"] += order_item_tmp["quantity"].to_i
+      session[:order].delete_at(index.to_i)
+      break
+    end
   end
 end
