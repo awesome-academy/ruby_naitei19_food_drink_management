@@ -62,6 +62,7 @@ vi:
         users: "Người dùng"
         cuisines: "Món ăn"
         categories: "Danh mục"
+        orders: "Đơn hàng"
   users:
     user_not_found: "Không tìm thấy người dùng"
     new:
@@ -188,6 +189,20 @@ vi:
       destroy:
         success: "Xóa thành công"
         error: "Xóa thất bại"
+    orders:
+      index:
+        title: "Quản lý Đơn đặt hàng"
+        back: "Quay lại"
+        date: "Ngày"
+        address: "Địa chỉ"
+        total_amount: "Tổng số tiền"
+        details: "Chi tiết"
+        status: "Trạng thái"
+        actions: "Thao tác"
+        phone: "Số điện thoại"
+      update:
+        success: "Cập nhật thành công"
+        fail: "Cập nhật thất bại"
     shared:
       cuisine:
         edit: "Chỉnh sửa"
@@ -219,6 +234,26 @@ vi:
         search: "Tìm kiếm"
       category_search_bar:
         search: "Tìm kiếm"
+      order:
+        pending: "Đang chờ"
+        accepted: "Đã chấp nhận"
+        rejected: "Bị từ chối"
+        unknown: "Không rõ"
+        details: "Chi tiết"
+        accept: "Chấp nhận"
+        reject: "Từ chối"
+      order_search_bar:
+        date_from: "Từ ngày"
+        date_to: "Đến ngày"
+        status: "Trạng thái"
+        search: "Tìm kiếm"
+        min_total: "Tổng tối thiểu"
+        max_total: "Tổng tối đa"
+        search_by_phone: "Tìm kiếm theo số điện thoại"
+        search_by_address: "Tìm kiếm theo địa chỉ"
+        search_by_status: "Tìm kiếm theo trạng thái"
+        search_by_min_total: "Tìm kiếm theo tổng tối thiểu"
+        search_by_max_total: "Tìm kiếm theo tổng tối đa"
   orders:
     filter_form:
       status: "Trạng thái"

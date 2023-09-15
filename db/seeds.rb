@@ -83,32 +83,30 @@ cuisine6 = Cuisine.create(
 )
 cuisine6.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
-# Add more cuisines with unique images as needed
-# first_name = "Admin"
-# last_name = "Admin"
-# email = "admin@gmail.com"
-# password = "123456"
-# password_confirmation = "123456"
-# is_actived = true
-# phone = Faker::PhoneNumber.cell_phone
-# address = Faker::Address.full_address
-# role = 0
-# avatar = Faker::Avatar.image
-# User.create(first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password_confirmation, is_actived: is_actived, phone: phone, address: address, role: role, avatar: avatar)
+#Add more cuisines with unique images as needed
+first_name = "Admin"
+last_name = "Admin"
+email = "admin@gmail.com"
+password = "123456"
+password_confirmation = "123456"
+is_actived = true
+phone = Faker::PhoneNumber.cell_phone
+address = Faker::Address.full_address
+role = 0
+User.create(first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password_confirmation, is_actived: is_actived, phone: phone, address: address, role: role)
 
-# 100.times do
-#   first_name = Faker::Name.first_name
-#   last_name = Faker::Name.last_name
-#   email = Faker::Internet.email
-#   password = "123456"
-#   password_confirmation = "123456"
-#   is_actived = true
-#   phone = Faker::PhoneNumber.cell_phone
-#   address = Faker::Address.full_address
-#   role = 1
-#   avatar = Faker::Avatar.image
-#   User.create(first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password_confirmation, is_actived: is_actived, phone: phone, address: address, role: role, avatar: avatar)
-# end
+100.times do
+  first_name = Faker::Name.first_name
+  last_name = Faker::Name.last_name
+  email = Faker::Internet.email
+  password = "123456"
+  password_confirmation = "123456"
+  is_actived = true
+  phone = Faker::PhoneNumber.cell_phone
+  address = Faker::Address.full_address
+  role = 1
+  User.create(first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password_confirmation, is_actived: is_actived, phone: phone, address: address, role: role)
+end
 
 #create default category
 Category.create(name: "Default", slug: "default")
@@ -138,23 +136,28 @@ Cuisine.all.each do |cuisine|
 end
 
 #Create orders
-# 10.times do |n|
-#   order = Order.create!(
-#     user_id: User.pluck(:id).sample,
-#     address: Faker::Address.full_address,
-#     phone: Faker::PhoneNumber.cell_phone,
-#     status: rand(0..2)
-#   )
-#   rand(1..5).times do |n|
-#     order_item = OrderItem.create!(
-#       order_id: order.id,
-#       cuisine_id: Cuisine.pluck(:id).sample,
-#       quantity: rand(2..5),
-#       price: rand(50000..100000),
-#     )
-#     order_item.sum = order_item.quantity * order_item.price
-#     order_item.save!
-#   end
-#   order.sum = order.order_items.sum(:sum)
-#   order.save!
-# end
+500.times do |n|
+  order = Order.create!(
+    user_id: User.pluck(:id).sample,
+    address: Faker::Address.full_address,
+    phone: Faker::PhoneNumber.cell_phone,
+    status: rand(0..2)
+  )
+  rand(1..5).times do |n|
+    cuisine_id = Cuisine.pluck(:id).sample
+    option_id = Cuisine.find(cuisine_id).options.pluck(:id).sample
+    order_item = OrderItem.create!(
+      order_id: order.id,
+      cuisine_id: cuisine_id,
+      quantity: rand(2..5),
+      price: rand(50000..100000),
+      discount: rand(0..100),
+      option_id: option_id
+    )
+    order_item.sum = order_item.quantity * order_item.price
+    order_item.save!
+  end
+  order.sum = order.order_items.sum(:sum)
+  order.created_at = Faker::Date.between(from: 365.days.ago, to: Date.today)
+  order.save!
+end

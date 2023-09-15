@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     namespace :admin do
       resources :cuisines, param: :slug, except: :show
       resources :categories, param: :slug
+      resources :orders, only: %i(index show destroy update)
     end
     resources :options, only: %i(create new)
     resources :order_items, only: %i(create new)

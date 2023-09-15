@@ -14048,7 +14048,11 @@ button.btn a {
 td th .operations {
   width: 200px;
 }
-
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
 
 .digg_pagination {
   background: inherit;

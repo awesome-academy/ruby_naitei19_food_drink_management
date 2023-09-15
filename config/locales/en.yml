@@ -55,6 +55,7 @@ en:
         users: "Users"
         cuisines: "Cuisines"
         categories: "Categories"
+        orders: "Orders"
   users:
     user_not_found: "User not found"
     new:
@@ -181,6 +182,20 @@ en:
       destroy:
         success: "Category deleted successfully"
         fail: "Category deleted fail"
+    orders:
+      index:
+        title: "Orders Management"
+        back: "Back"
+        date: "Date"
+        address: "Address"
+        total_amount: "Total amount"
+        details: "Details"
+        status: "Status"
+        actions: "Actions"
+        phone: "Phone"
+      update:
+        success: "Order updated successfully"
+        fail: "Order updated fail"
     shared:
       cuisine:
         delete: "Delete"
@@ -211,6 +226,24 @@ en:
         search: "Search"
       category_search_bar:
         search: "Search"
+      order:
+        pending: "Pending"
+        accepted: "Accepted"
+        rejected: "Rejected"
+        unknown: "Unknown"
+        details: "Details"
+        accept: "Accept"
+        reject: "Reject"
+      order_form:
+        date_from: "Date from"
+        date_to: "Date to"
+        status: "Status"
+        search: "Search"
+        min_total: "Min total"
+        max_total: "Max total"
+        search_by_phone: "Search by phone"
+        search_by_address: "Search by address"
+        search_by_status: "Search by status"
   orders:
     filter_form:
       status: "Status"

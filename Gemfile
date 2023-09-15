@@ -60,6 +60,7 @@ gem "pagy"
 gem "paranoia", "~> 2.4"
 gem "rails-i18n"
 gem "ransack"
+gem "ransack-enum", "~> 1.0"
 gem "will_paginate", "~> 4.0"
 
 group :development, :test do
