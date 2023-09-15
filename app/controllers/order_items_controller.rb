@@ -12,9 +12,9 @@ class OrderItemsController < ApplicationController
     order_item_tmp = create_order_item_tmp index
     session[:order][index.to_i] = order_item_tmp
     check_duplicate index, order_item_tmp
-    @order = session[:order]
+    @order_tmp = session[:order]
     respond_to do |format|
-      format.html{redirect_to orders_path}
+      format.html{redirect_to order_path}
       format.js
     end
   end

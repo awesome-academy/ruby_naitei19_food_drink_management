@@ -1,8 +1,8 @@
 <div class="order-container">
   <h1><%= t("order.your_order") %></h1>
-  <button class="delete-order-button"><%= link_to t("order.delete_all"), orders_delete_path %></button>
+ <button class="delete-order-button"><%= link_to t("order.delete_all"), orders_delete_path, data: {turbo_method: "get", turbo_confirm: t("order.delete_confirm")} %></button>
 
-  <% @order.each_with_index do |order_item, index| %>
+  <% @order_tmp.each_with_index do |order_item, index| %>
     <div class="order-item">
       <h2><%= order_item["quantity"] %> x <%= order_item["cuisine"]["name"] %> </h2>
       <button class="edit-order-item-button" data-index="<%= index %>"><%= t("order_item.edit") %></button>
@@ -16,5 +16,5 @@
       </ul>
     </div>
   <% end %>
-  <h3 class="total-price"><%= t("order.total_price") %><%= number_to_currency(calculate_total_price(@order)) %></h3>
+  <h3 class="total-price"><%= t("order.total_price") %><%= number_to_currency(calculate_total_price(@order_tmp)) %></h3>
 </div>

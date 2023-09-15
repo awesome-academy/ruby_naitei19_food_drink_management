@@ -334,6 +334,10 @@ vi:
     delete_all: "Xoa tat ca"
     delete_success: "Xoa thanh cong"
     delete_fail: "Xoa that bai"
+    order_cancelled_successfully: "Huy thanh cong"
+    order_cancellation_failed: "Huy that bai"
+    cancel: "Huy"
+    delete_confirm: "Ban muon xoa khong?"
   order_item:
     edit_for: "Sua cho san pham: "
     save: "Luu"

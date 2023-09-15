@@ -323,6 +323,10 @@ en:
     delete_all: "Delete all"
     delete_success: "Deleted successfully"
     delete_fail: "Delete failed"
+    order_cancelled_successfully: "Cancelled successfully"
+    order_cancellation_failed: "Cancel failed"
+    cancel: "Cancel"
+    delete_confirm: "Are you want to delete?"
   order_item:
     edit_for: "Edit for Cuisine: "
     save: "Save"
