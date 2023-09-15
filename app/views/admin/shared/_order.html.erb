@@ -1,0 +1,33 @@
+<tr>
+  <td><%= order.created_at.strftime("%d/%m/%Y %H:%M") %></td>
+  <td><%= order.address %></td>
+  <td><%= order.phone %></td>
+  <td><%= number_to_currency(order.sum) %></td>
+  <td>
+    <% case order.status %>
+    <% when "pending" %>
+    <span class="badge text-bg-warning text-white"><%= t(".pending") %></span>
+    <% when "accepted" %>
+    <span class="badge text-bg-success text-white"><%= t(".accepted") %></span>
+    <% when "rejected" %>
+    <span class="badge text-bg-danger text-white"><%= t(".rejected") %></span>
+  <% else %>
+    <span class="badge badge text-bg-dark text-white"><%= t(".unknown") %></span>
+  <% end %>
+</td>
+<td><%= t(".details") %></td>
+<td class="operations">
+  <div class="action_buttons">
+    <% if order.pending? %>
+      <%= form_for order, url: admin_order_path(order), method: :patch do |f| %>
+        <%= f.hidden_field :status, value: "accepted" %>
+        <%= f.submit t(".accept"), class: "btn btn-success text-white d-inline-block" %>
+      <% end %>
+      <%= form_for order, url: admin_order_path(order), method: :patch do |f| %>
+        <%= f.hidden_field :status, value: "rejected" %>
+        <%= f.submit t(".reject"), class: "btn btn-danger text-white d-inline-block" %>
+      <% end %>
+    <% end %>
+  </div>
+</td>
+</tr>

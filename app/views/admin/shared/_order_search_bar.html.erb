@@ -1,0 +1,37 @@
+<%= search_form_for @q, url: admin_orders_path, html: { class: "form-inline row g-3 my-4 p-4" } do |f| %>
+  <div class="row">
+    <div class="col-md-6 mb-2">
+      <%= f.label :created_at_gteq, t(".date_from") %>
+      <%= f.search_field :created_at_gteq, class: "form-control", type: "date", placeholder: "Search by Created Date (from)" %>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :created_at_lteq, t(".date_to") %>
+      <%= f.search_field :created_at_lteq, class: "form-control", type: "date", placeholder: "Search by Created Date (to)" %>
+    </div>
+  </div>
+  <div class="row mb-2">
+    <div class="col-md-3">
+      <%= f.label :sum_gteq, t(".min_total") %>
+      <%= f.search_field :sum_gteq, class: "form-control", type: "number", placeholder: t(".search_by_min_total") %>
+    </div>
+    <div class="col-md-3">
+      <%= f.label :sum_lteq, t(".max_total") %>
+      <%= f.search_field :sum_lteq, class: "form-control", type: "number", placeholder: t(".search_by_max_total") %>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :status_eq, t(".search_by_status") %>
+      <%= f.collection_select :status_eq, Order.statuses.keys, :to_s, :humanize, { include_blank: true }, class: "form-control" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <%= f.label :address_cont, t(".search_by_address") %>
+      <%= f.search_field :address_cont, class: "form-control", placeholder: t(".search_by_address") %>
+    </div>
+    <div class="col-md-6">
+      <%= f.label :phone_cont, t(".search_by_phone") %>
+      <%= f.search_field :phone_cont, class: "form-control", placeholder: t(".search_by_phone") %>
+    </div>
+  </div>
+  <button class="btn btn-primary" type="submit"><%= t ".search" %></button>
+<% end %>

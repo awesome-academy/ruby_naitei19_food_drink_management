@@ -14,22 +14,22 @@
         <span class="badge badge-sm bg-info ms-auto"><%= t('.NEW') %></span></a></li>
     <li class="nav-title"><%= t('.manager') %></li>
     <li class="nav-item">
-      <a class="nav-link" href="colors.html">
-        <i class="bi bi-people-fill nav-icon"></i>
-        <%= t('.users') %>
-      </a></li>
-    <li class="nav-item">
-      <%= link_to admin_cuisines_path, class: "nav-link" do %>
-        <i class="bi bi-cart nav-icon"></i>
-        <%= t('.cuisines') %>
+      <%= link_to admin_orders_path, class: "nav-link" do %>
+        <i class="bi bi-cash-stack nav-icon"></i>
+        <%= t('.orders') %>
       <% end %>
-    </li>
-    <li class="nav-item">
-      <%= link_to admin_categories_path, class: "nav-link" do %>
-        <i class="bi bi-tags nav-icon"></i>
-        <%= t('.categories') %>
-      <% end %>
-    </li>
-  </ul>
-  <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
-</div>
+      <li class="nav-item">
+        <%= link_to admin_cuisines_path, class: "nav-link" do %>
+          <i class="bi bi-cart nav-icon"></i>
+          <%= t('.cuisines') %>
+        <% end %>
+      </li>
+      <li class="nav-item">
+        <%= link_to admin_categories_path, class: "nav-link" do %>
+          <i class="bi bi-tags nav-icon"></i>
+          <%= t('.categories') %>
+        <% end %>
+      </li>
+    </ul>
+    <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+  </div>
