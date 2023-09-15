@@ -1,0 +1,14 @@
+<div class="card mb-3">
+  <div class="card-body">
+    <div class="card-text d-flex justify-content-between">
+      <div class="">
+        <strong class="font-weight-bold"><%= t("admin.shared.option.name") %>:</strong> <%= option.name %><br>
+        <strong class="font-weight-bold"><%= t("admin.shared.option.price") %>:</strong> <%= option.price %><br>
+      </div>
+      <div class="">
+        <%= link_to t("admin.shared.option.edit"), edit_admin_cuisine_option_path(cuisine_slug: option.cuisine.slug, id: option.id), class: "btn btn-primary btn-sm text-white" %>
+        <%= link_to t("admin.shared.option.delete"), admin_cuisine_option_path(cuisine_slug: option.cuisine.slug, id: option.id), data: {"turbo-method": :delete, turbo_confirm: t(".admin.shared.option.are_you_sure")}, class: "btn btn-danger btn-sm text-white" %>
+      </div>
+    </div>
+  </div>
+</div>

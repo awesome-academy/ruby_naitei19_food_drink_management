@@ -1,6 +1,4 @@
-class Admin::OrdersController < ApplicationController
-  layout "admin"
-
+class Admin::OrdersController < Admin::BaseController
   before_action :find_order, only: %i(update)
 
   def index

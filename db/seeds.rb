@@ -83,7 +83,7 @@ cuisine6 = Cuisine.create(
 )
 cuisine6.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
-#Add more cuisines with unique images as needed
+# Add more cuisines with unique images as needed
 first_name = "Admin"
 last_name = "Admin"
 email = "admin@gmail.com"

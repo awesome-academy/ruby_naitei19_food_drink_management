@@ -5,3 +5,14 @@
   </div>
 </div>
 <%= render partial: "admin/shared/cuisine_form"%>
+<div class="card mb-3 mt-5">
+  <div class="card-header">
+    <div class="d-flex justify-content-between align-items-center">
+      <h5 class="card-title"><%= t(".options_list") %></h5>
+      <%= link_to t(".add_option"), new_admin_cuisine_option_path(cuisine_slug: @cuisine.slug), class: "btn btn-primary" %>
+    </div>
+  </div>
+  <div class="card-body">
+    <%= render partial: "admin/shared/option", collection: @cuisine.options %>
+  </div>
+</div>
