@@ -13,7 +13,9 @@ Rails.application.routes.draw do
     resources :categories, param: :slug, only: :show
     resources :cuisines, param: :slug, only: %i(index show)
     namespace :admin do
-      resources :cuisines, param: :slug, except: :show
+      resources :cuisines, param: :slug, except: :show do
+        resources :options, only: %i(create new destroy edit update)
+      end
       resources :categories, param: :slug
       resources :orders, only: %i(index show destroy update)
     end

@@ -1,6 +1,6 @@
 <tr>
   <td><%= image_tag cuisine_image(cuisine), class: cuisine_image_class(cuisine) , width: 100 %></td>
-  <td><%= link_to cuisine.name, admin_cuisine_path(cuisine) %></td>
+  <td><%= link_to cuisine.name, edit_admin_cuisine_path(slug: cuisine.slug) %></td>
   <td><%= cuisine.category_name %></td>
   <td><%= cuisine.description %></td>
   <td><%= number_to_currency(cuisine.price) %></td>

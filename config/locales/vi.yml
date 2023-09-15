@@ -152,6 +152,8 @@ vi:
         submit: "Cập nhật Cuisine"
         back: "Quay lại"
         not_found: "Không tìm thấy cuisine"
+        add_option: "Thêm tùy chọn"
+        options_list: "Danh sách tùy chọn"
       create:
         success: "Cuisine được tạo thành công"
         fail: "Tạo cuisine thất bại"
@@ -209,6 +211,22 @@ vi:
       update:
         success: "Cập nhật thành công"
         fail: "Cập nhật thất bại"
+    options:
+      create:
+        success: "Tạo option thành công"
+        fail: "Tạo option thất bại"
+      update:
+        success: "Cập nhật option thành công"
+        fail: "Cập nhật option thất bại"
+      destroy:
+        success: "Xóa option thành công"
+        fail: "Xóa option thất bại"
+      edit:
+        title: "Chỉnh sửa option"
+        back: "Quay lại"
+      new:
+        title: "Tạo option mới"
+        back: "Quay lại"
     shared:
       cuisine:
         edit: "Chỉnh sửa"
@@ -260,6 +278,13 @@ vi:
         search_by_status: "Tìm kiếm theo trạng thái"
         search_by_min_total: "Tìm kiếm theo tổng tối thiểu"
         search_by_max_total: "Tìm kiếm theo tổng tối đa"
+      option:
+        name: "Tên"
+        price: "Giá"
+        edit: "Chỉnh sửa"
+        delete: "Xóa"
+        are_you_sure: "Bạn có chắc chắn không?"
+        save: "Lưu"
   orders:
     filter_form:
       status: "Trạng thái"

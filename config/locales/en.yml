@@ -141,6 +141,8 @@ en:
         submit: "Update Cuisine"
         back: "Back"
         not_found: "Cuisine not found"
+        add_option: "Add Option"
+        options_list: "Options List"
       create:
         success: "Cuisine created successfully"
         fail: "Cuisine created failed"
@@ -198,6 +200,22 @@ en:
       update:
         success: "Order updated successfully"
         fail: "Order updated fail"
+    options:
+      create:
+        success: "Option created successfully"
+        fail: "Option created failed"
+      update:
+        success: "Option updated successfully"
+        fail: "Option updated failed"
+      destroy:
+        success: "Option deleted successfully"
+        fail: "Option deleted failed"
+      edit:
+        title: "Edit Option"
+        back: "Back"
+      new:
+        title: "New Option"
+        back: "Back"
     shared:
       cuisine:
         delete: "Delete"
@@ -246,6 +264,13 @@ en:
         search_by_phone: "Search by phone"
         search_by_address: "Search by address"
         search_by_status: "Search by status"
+      option:
+        name: "Name"
+        price: "Price"
+        edit: "Edit"
+        delete: "Delete"
+        are_you_sure: "Are you sure?"
+        save: "Save"
   orders:
     filter_form:
       status: "Status"

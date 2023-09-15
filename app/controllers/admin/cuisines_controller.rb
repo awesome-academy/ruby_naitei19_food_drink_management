@@ -1,12 +1,12 @@
-class Admin::CuisinesController < ApplicationController
+class Admin::CuisinesController < Admin::BaseController
   before_action :find_cuisine, only: %i(edit update destroy)
   before_action :load_categories, only: %i(new edit)
 
-  layout "admin"
-
   def index
     @q = Cuisine.ransack(params[:q])
-    @pagy, @cuisines = pagy(@q.result(distinct: true),
+    @pagy, @cuisines = pagy(@q
+    .result(distinct: true)
+    .includes(:options, :category).order(created_at: :desc),
                             items: Settings.config.cuisines_per_page)
   end
 
