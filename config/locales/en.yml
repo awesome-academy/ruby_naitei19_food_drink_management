@@ -200,6 +200,28 @@ en:
       update:
         success: "Order updated successfully"
         fail: "Order updated fail"
+      show:
+        title: "Order Detail"
+        back: "Back"
+        order_detail: "Order Detail"
+        status: "Status"
+        view_order_detail: "View order detail"
+        pending: "Pending"
+        accepted: "Accepted"
+        rejected: "Rejected"
+        date: "Date"
+        address: "Address"
+        total_amount: "Total amount"
+        phone: "Phone"
+        cuisine_list: "Cuisine list"
+        cuisine: "Cuisine"
+        quantity: "Quantity"
+        price: "Price"
+        total_price: "Total price"
+        discount: "Discount"
+        user: "User"
+        accept: "Accept"
+        reject: "Reject"
     options:
       create:
         success: "Option created successfully"
@@ -271,6 +293,20 @@ en:
         delete: "Delete"
         are_you_sure: "Are you sure?"
         save: "Save"
+      order_search_bar:
+        date_from: "Từ ngày"
+        date_to: "Đến ngày"
+        status: "Trạng thái"
+        search: "Tìm kiếm"
+        min_total: "Tổng tối thiểu"
+        max_total: "Tổng tối đa"
+        search_by_phone: "Tìm kiếm theo số điện thoại"
+        search_by_address: "Tìm kiếm theo địa chỉ"
+        search_by_status: "Tìm kiếm theo trạng thái"
+      order_item:
+        option: "Option"
+        name: "Name"
+        price: "Price"
   orders:
     filter_form:
       status: "Status"

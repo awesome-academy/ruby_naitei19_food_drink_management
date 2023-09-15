@@ -1,0 +1,13 @@
+<tr>
+  <td><%= link_to order_item.cuisine_name, edit_admin_cuisine_path(slug: order_item.cuisine_slug) %></td>
+  <td><%= order_item.quantity %></td>
+  <td><%= number_to_currency(order_item.price) %></td>
+  <td><%= order_item.discount %>%</td>
+  <td><%= number_to_currency(order_item.sum) %></td>
+</tr>
+<% if order_item.option.present? %>
+  <tr>
+    <td><%= t(".option") %> </td>
+    <td colspan="4"><%= t(".name") %>: <%= order_item.option_name %> - <%= t(".price") %>: <%= number_to_currency(order_item.option_price) %></td>
+  </tr>
+<% end %>
