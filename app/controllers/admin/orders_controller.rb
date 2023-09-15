@@ -1,9 +1,14 @@
 class Admin::OrdersController < Admin::BaseController
-  before_action :find_order, only: %i(update)
+  before_action :find_order, only: %i(update show)
 
   def index
     @q = Order.ransack(params[:q])
     @pagy, @orders = pagy(@q.result(distinct: true).newest)
+  end
+
+  def show
+    @order_items = @order.order_items
+    @user = @order.user
   end
 
   def update

@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center mb-5">
+    <h1 class="mb-0"><%= t(".title") %></h1>
+    <div class="d-flex justify-content-between align-items-center">
+      <% if @order.pending? %>
+        <%= form_for @order, url: admin_order_path(@order), method: :patch do |f| %>
+          <%= f.hidden_field :status, value: "accepted" %>
+          <%= f.submit t(".accept"), class: "btn btn-success text-white" %>
+        <% end %>
+        <%= form_for @order, url: admin_order_path(@order), method: :patch do |f| %>
+          <%= f.hidden_field :status, value: "rejected" %>
+          <%= f.submit t(".reject"), class: "btn btn-danger text-white" %>
+        <% end %>
+      <% end %>
+      <%= link_to t(".back"), admin_orders_path, class: "btn btn-secondary" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3><%= t(".order_detail") %></h3>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row"><%= t(".date") %>:</th>
+            <td><%= @order.created_at.strftime("%d/%m/%Y %H:%M") %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= t(".address") %>:</th>
+            <td><%= @order.address %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= t(".phone") %>:</th>
+            <td><%= @order.phone %></td>
+          </tr>
+          <tr>
+            <th scope="row"><%= t(".status") %>:</th>
+            <td>
+              <% case @order.status %>
+              <% when "pending" %>
+              <span class="badge text-bg-warning text-white"><%= t(".pending") %></span>
+              <% when "accepted" %>
+              <span class="badge text-bg-success text-white"><%= t(".accepted") %></span>
+              <% when "rejected" %>
+              <span class="badge text-bg-danger text-white"><%= t(".rejected") %></span>
+            <% else %>
+              <span class="badge badge text-bg-dark text-white"><%= t(".unknown") %></span>
+            <% end %>
+          </td>
+        </tr>
+        <tr>
+          <th scope="row"><%= t(".total_price") %>:</th>
+          <td><%= number_to_currency(@order.sum) %></td>
+        </tr>
+        <tr>
+          <th scope="row"><%= t(".user") %>:</th>
+          <td><%= @order.user_first_name %> <%= @order.user_last_name %></td>
+        </tr>
+        <tr>
+          <th scope="row">Email:</th>
+          <td><%= @order.user_email %></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-md-6">
+    <h3><%= t(".cuisine_list") %></h3>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col"><%= t(".cuisine") %></th>
+          <th scope="col"><%= t(".quantity") %></th>
+          <th scope="col"><%= t(".price") %></th>
+          <th scope="col"><%= t(".discount") %></th>
+          <th scope="col"><%= t(".total_price") %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "admin/shared/order_item", collection: @order.order_items %>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

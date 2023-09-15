@@ -15,7 +15,12 @@
     <span class="badge badge text-bg-dark text-white"><%= t(".unknown") %></span>
   <% end %>
 </td>
-<td><%= t(".details") %></td>
+<td>
+  <%= link_to t(".details"),
+              admin_order_path(order),
+                  class: "btn btn-primary",
+                  data: { turbo_frame: "modal" } %>
+</td>
 <td class="operations">
   <div class="action_buttons">
     <% if order.pending? %>

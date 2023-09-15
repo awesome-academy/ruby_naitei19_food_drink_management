@@ -12,6 +12,9 @@ class Order < ApplicationRecord
     %w(address phone sum created_at status)
   end
 
+  delegate :email, :first_name, :last_name, to: :user, prefix: true,
+allow_nil: true
+
   validates :address, presence: true,
 length: {maximum: Settings.validates.orders.address.max_length}
   validates :phone, presence: true,

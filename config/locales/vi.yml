@@ -211,6 +211,27 @@ vi:
       update:
         success: "Cập nhật thành công"
         fail: "Cập nhật thất bại"
+      show:
+        title: "Chi tiết hóa đơn"
+        back: "Quay lại"
+        order_detail: "Thông tin hóa đơn"
+        status: "Trạng thái"
+        view_order_detail: "Xem chi tiết hóa đơn"
+        pending: "Chờ xử lý"
+        accepted: "Đã chấp nhận"
+        rejected: "Bị từ chối"
+        date: "Ngày tháng"
+        address: "Địa chỉ"
+        phone: "Số điện thoại"
+        cuisine_list: "Danh sách món ăn"
+        cuisine: "Món ăn"
+        quantity: "Số lượng"
+        price: "Giá"
+        total_price: "Tổng tiền"
+        discount: "Giảm giá"
+        user: "Người dùng"
+        accept: "Chấp nhận"
+        reject: "Từ chối"
     options:
       create:
         success: "Tạo option thành công"
@@ -285,6 +306,10 @@ vi:
         delete: "Xóa"
         are_you_sure: "Bạn có chắc chắn không?"
         save: "Lưu"
+      order_item:
+        option: "Tùy chọn"
+        name: "Tên"
+        price: "Giá"
   orders:
     filter_form:
       status: "Trạng thái"

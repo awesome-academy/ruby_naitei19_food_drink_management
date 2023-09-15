@@ -136,7 +136,7 @@ Cuisine.all.each do |cuisine|
 end
 
 #Create orders
-500.times do |n|
+50.times do |n|
   order = Order.create!(
     user_id: User.pluck(:id).sample,
     address: Faker::Address.full_address,
