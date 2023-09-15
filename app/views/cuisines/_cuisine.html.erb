@@ -9,9 +9,14 @@
           <p><%= cuisine.description %></p>
         </div>
       <% end %>
-      <% if logged_in? %>
+      <% if !cuisine.available %>
+        <p class="cuisine-out-of-stock"><%= t "cuisine.out_of_stock" %></p>
+      <% elsif logged_in? %>
         <button class="btn btn-primary add-to-cart-button" data-cuisine-id="<%= cuisine.id %>"><%= t("order.add") %></button>
+      <% else %>
+        <p class="cuisine-available"><%= t "cuisine.available" %></p>
       <% end %>
+
     </div>
   </div>
 </div>

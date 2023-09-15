@@ -399,10 +399,6 @@ section {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng đổ lớn hơn khi hover */
 }
 
-.cuisine-image {
-  max-width: 100%; /* Ảnh tự thích nghi với kích thước của thẻ cha */
-}
-
 .sentence {
   padding: 15px;
 }
@@ -776,4 +772,24 @@ h3 {
 
 .popupnon {
   display: none;
+}
+
+.cuisine-out-of-stock {
+  color: red;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.cuisine-available {
+  color: rgb(0, 174, 255);
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.add-to-cart-button {
+  margin-bottom: 10px;
+  margin-left: 10px;
+  width: 100px;
 }

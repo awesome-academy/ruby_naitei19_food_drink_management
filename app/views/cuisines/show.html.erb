@@ -7,7 +7,13 @@
         <p class="cuisine-description"><%= @cuisine.description %></p>
         <p class="cuisine-discount"><%= @cuisine.discount %> % <%= t "cuisine.discount" %></p>
         <p class="cuisine-price"><strong><%= t "cuisine.price" %></strong> <%= number_to_currency(@cuisine.price) %></p>
-        <button class="btn btn-primary add-to-cart-button" data-cuisine-id="<%= @cuisine.id %>"><%= t("cuisine.add") %></button>
+        <% if !@cuisine.available %>
+          <p class="cuisine-out-of-stock"><%= t "cuisine.out_of_stock" %></p>
+        <% elsif logged_in? %>
+          <button class="btn btn-primary add-to-cart-button" data-cuisine-id="<%= @cuisine.id %>"><%= t("order.add") %></button>
+        <% else %>
+          <p class="cuisine-available"><%= t "cuisine.available" %></p>
+        <% end %>
       </div>
     </div>
   </div>

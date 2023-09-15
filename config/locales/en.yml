@@ -105,6 +105,8 @@ en:
     add: "Add"
     is_too_big: "is too big (should be less than 5MB)"
     must_be_a_PNG_JPG_JPEG: "must be a PNG, JPG, JPEG"
+    out_of_stock: "Out of stock"
+    available: "Available"
   category:
     no_have: "Don't have this category"
   sessions:
