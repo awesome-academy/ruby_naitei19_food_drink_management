@@ -793,3 +793,101 @@ h3 {
   margin-left: 10px;
   width: 100px;
 }
+
+/* Payment */
+.payment-section {
+  margin: auto;
+  .form-control:focus {
+    box-shadow: none;
+  }
+  .box {
+    padding: 30px 25px;
+    box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+  }
+  .delivery-info {
+    margin-bottom: 20px;
+    i {
+      font-size: 22px;
+      -webkit-text-stroke: 0.5px
+    }
+    .error {
+      margin-left: 44px;
+      font-size: 16px;
+      color: $danger;
+      min-height: 0.5rem;
+    }
+    .field_with_errors {
+      width: 100%;
+    }
+  }
+  .payment {
+    margin-top: 20px;
+    .method-img {
+      width: 40px;
+      height: 40px;
+    }
+    .payment-input[type=radio] {
+      transform: scale(1.8);
+      accent-color: $primary;
+      height: 30px;
+      cursor: pointer;
+    }
+    .payment-box {
+      padding: 12px;
+      margin: 6px;
+      border: 1px solid $disabled;
+      border-radius: 10px;
+      width: 100%;
+    }
+    .method-name{
+      padding-left: 15px;
+      font-size: 18px;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 12px 0;
+      cursor: pointer;
+    }
+    .btn-submit {
+      @include hero_btn($primary, $white, 6px, 10px, 4px);
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+  table.orderlist {
+    font-size: 18px;
+    th {
+      font-weight: 400;
+      font-size: 20px;
+      border-bottom-color: #ebebeb !important;
+      text-align: center;
+    }
+    td {
+      text-align: center;
+      &.order-item-price {
+        color: $primary;
+        font-weight: 500;
+      }
+    }
+    .cuisine-img {
+      width: 60px;
+    }
+    .item-name {
+      text-align: left;
+      span {
+        display: block;
+        font-size: 14px;
+        color: #333;
+      }
+    }
+  }
+  .order-amount {
+    color: $primary;
+    font-size: 24px;
+    font-weight: 500;
+    text-align: right;
+  }
+}

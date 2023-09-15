@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get "login", to: "sessions#new"
     post "login", to: "sessions#create"
     delete "logout", to: "sessions#destroy"
-    get "orders", to: "orders#show"
+    get "order", to: "orders#show"
     get "order-history", to: "orders#index"
     resources :users, only: %i(create edit update)
     get "orders/delete_item", to: "orders#delete_item"
@@ -19,5 +19,6 @@ Rails.application.routes.draw do
     end
     resources :options, only: %i(create new)
     resources :order_items, only: %i(create new)
+    resources :orders, only: %i(new create)
   end
 end

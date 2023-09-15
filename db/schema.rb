@@ -103,6 +103,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_14_132206) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
+  create_table "payments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.decimal "amount", precision: 10
+    t.integer "method"
+    t.bigint "order_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_payments_on_order_id"
+  end
+
   create_table "reviews", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "cuisine_id", null: false
@@ -140,6 +149,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_14_132206) do
   add_foreign_key "order_items", "cuisines"
   add_foreign_key "order_items", "orders"
   add_foreign_key "orders", "users"
+  add_foreign_key "payments", "orders"
   add_foreign_key "reviews", "cuisines"
   add_foreign_key "reviews", "users"
 end

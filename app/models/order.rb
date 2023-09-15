@@ -3,6 +3,8 @@ class Order < ApplicationRecord
 
   belongs_to :user
   has_many :order_items, dependent: :destroy
+  has_one :payment, dependent: :destroy
+  accepts_nested_attributes_for :payment
 
   enum status: {pending: 0, accepted: 1, rejected: 2}
 
