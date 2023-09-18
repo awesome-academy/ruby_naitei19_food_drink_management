@@ -1,0 +1,11 @@
+<div class="notif-item d-flex align-items-center unread">
+  <div class="item-dot">
+  </div>
+  <div class="item-box">
+    <div class="item-title"><%= notification.title %></div>
+    <p class="item-content"><%= notification.content %></p>
+    <span class="item-time">
+      <%= time_ago_in_words notification.created_at %> <%= t ".ago" %>
+    </span>
+  </div>
+</div>

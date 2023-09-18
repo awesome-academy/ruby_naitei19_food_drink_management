@@ -13,7 +13,11 @@
         <li><%= link_to t("order.history"), order_history_path %></li>
       </ul>
     </nav>
-    <div class="d-flex gap-3">
+    <div class="d-flex gap-3 align-items-center">
+      <div class="notif">
+        <i class="bi bi-bell notif-icon" id="notif-icon"></i>
+        <div class="notif-modal" id="notif-modal"></div>
+      </div>
       <div class="btn btn-book-a-table"><i class="bi bi-cart3"></i></div>
       <% if logged_in? %>
         <div class="dropdown">

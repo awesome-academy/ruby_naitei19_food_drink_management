@@ -379,3 +379,16 @@ en:
       cash: "Pay by Cash"
       credit_card: "Pay by ATM/VISA"
       paypal: "Pay by PayPal"
+  notifications:
+    index:
+      title: "Notifications"
+      require_login: "Login to view notifications"
+      ago: "ago"
+    notification:
+      ago: "ago"
+    accept_order:
+      title: "Order has been accepted"
+      content: "The order has been accepted. Check in the order history section"
+    reject_order:
+      title: "Order has been rejected"
+      content: "The order has been rejected. Please check your order history and reorder"

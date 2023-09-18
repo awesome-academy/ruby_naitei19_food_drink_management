@@ -22,6 +22,6 @@ Rails.application.routes.draw do
     resources :options, only: %i(create new)
     resources :order_items, only: %i(create new)
     resources :orders, only: %i(new create destroy)
-
+    resources :notifications, only: :index
   end
 end

@@ -379,3 +379,15 @@ vi:
       cash: "Thanh toán bằng tiền mặt"
       credit_card: "Thanh toán bằng ATM/VISA"
       paypal: "Thanh toán bằng PayPal"
+  notifications:
+    index:
+      title: "Thông báo"
+      require_login: "Đăng nhập để xem thông báo"
+    notification:
+      ago: "trước"
+    accept_order:
+      title: "Đơn hàng đã được phê duyệt"
+      content: "Đơn hàng đã được phê duyệt. Kiểm tra trong phần lịch sử đơn hàng"
+    reject_order:
+      title: "Đơn hàng đã bị hủy"
+      content: "Đơn hàng đã bị hủy. Vui lòng kiểm tra trong lịch sử đơn hàng và đặt lại"
