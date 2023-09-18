@@ -11,7 +11,7 @@
     <%= form.label :option_id, t("order_item.option") %><br>
     <% @order_item.cuisine.options.each do |option| %>
       <%= form.radio_button :option_id, option.id %>
-      <%= form.label :option_id, option.name %><br>
+      <%= form.label :option_id, option.name, :value => option.id %><br>
     <% end %>
   </div>
 
@@ -19,7 +19,7 @@
 
 
   <div class="actions">
-    <%= form.submit t("order_item.save"), onclick: "handleCloseModal()" %>
+    <%= form.submit t("order_item.save"), onclick: "handleCloseModal()", class: "btn btn-secondary save-popup-button" %>
     <%= button_tag t("order.close"), type: "button", class: "btn btn-secondary close-popup-button" %>
   </div>
 <% end %>

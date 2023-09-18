@@ -2,15 +2,13 @@
 class CuisinesController < ApplicationController
   def index
     @q = Cuisine.ransack(params[:q])
-    @cuisines = if params[:q].present?
-                  @q.result(distinct: true)
-                else
-                  Cuisine.paginate(page: params[:page],
-                                   per_page: Settings
-                                   .config
-                                   .pagination
-                                   .cuisines_per_page)
-                end.order_by_created_at
+    if params[:q].present?
+      @pagy, @cuisines = pagy(@q.result(distinct: true),
+                              items: Settings.config.cuisines_per_page)
+    else
+      @pagy, @cuisines = pagy(Cuisine.order_by_created_at,
+                              items: Settings.config.cuisines_per_page)
+    end
   end
 
   def show

@@ -1,7 +1,7 @@
 <div class="order-container">
   <h1><%= t("order.your_order") %></h1>
- <button class="delete-order-button"><%= link_to t("order.delete_all"), orders_delete_path, data: {turbo_method: "get", turbo_confirm: t("order.delete_confirm")} %></button>
-
+ <button class="delete-order-button"><%= link_to t("order.delete_all"), orders_delete_path, data: {turbo_method: "get", turbo_confirm: t("order.delete_confirm")}, class: "delete-text-button" %></button>
+ <button class="payment-order-button"><%= link_to t("order.payment"), new_order_path, class: "payment-text-button" %></button>
   <% @order_tmp.each_with_index do |order_item, index| %>
     <div class="order-item">
       <h2><%= order_item["quantity"] %> x <%= order_item["cuisine"]["name"] %> </h2>

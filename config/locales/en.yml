@@ -363,6 +363,9 @@ en:
     order_cancellation_failed: "Cancel failed"
     cancel: "Cancel"
     delete_confirm: "Are you want to delete?"
+    payment: "Payment Order"
+    name: "Order"
+    history: "History"
   order_item:
     edit_for: "Edit for Cuisine: "
     save: "Save"
