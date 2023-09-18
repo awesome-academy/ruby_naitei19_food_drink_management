@@ -363,6 +363,9 @@ vi:
     order_cancellation_failed: "Huy that bai"
     cancel: "Huy"
     delete_confirm: "Ban muon xoa khong?"
+    payment: "Thanh toan"
+    name: "Gio hang"
+    history: "Lich su"
   order_item:
     edit_for: "Sua cho san pham: "
     save: "Luu"

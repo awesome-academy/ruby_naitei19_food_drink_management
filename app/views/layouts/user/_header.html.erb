@@ -6,16 +6,11 @@
     <nav id="navbar" class="navbar">
       <ul>
         <li><%= link_to t(".home"), "/" %></li>
-        <li><%= link_to t(".about"), "#" %></li>
         <li><%= link_to t(".menu"), category_path('category-1') %></li>
         <li><%= link_to t(".all_cuisines"), cuisines_path %></li>
-        <li class="dropdown"><a href="#"><span><%= t ".events" %></span>
-            <i class="bi bi-chevron-down dropdown-indicator"></i></a>
-          <ul>
-            <li><a href="#"><%= t ".events"  %> </a></li>
-          </ul>
-        </li>
-        <li><%= link_to t(".contact"), "#" %></li>
+        <li><%= link_to t("order.name"), order_path %></li>
+        <li><%= link_to t("order.payment"), new_order_path %></li>
+        <li><%= link_to t("order.history"), order_history_path %></li>
       </ul>
     </nav>
     <div class="d-flex gap-3">
