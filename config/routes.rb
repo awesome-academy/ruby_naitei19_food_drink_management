@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     end
     resources :options, only: %i(create new)
     resources :order_items, only: %i(create new)
-    resources :orders, only: %i(new create)
+    resources :orders, only: %i(new create destroy)
+
   end
 end
