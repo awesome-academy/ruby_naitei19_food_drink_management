@@ -1141,3 +1141,9 @@ h3 {
     }
   }
 }
+
+/* Label input*/
+.required::after {
+  content: " *";
+  color: red;
+}

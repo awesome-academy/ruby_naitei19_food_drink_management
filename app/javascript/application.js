@@ -8,6 +8,7 @@ import "custom/image_upload";
 import "custom/edit_order";
 import "custom/delete_item";
 import "custom/notification";
+import "custom/navbar";
 import "channels";
 import "chartkick";
 import "Chart.bundle";

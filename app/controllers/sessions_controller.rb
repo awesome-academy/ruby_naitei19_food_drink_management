@@ -8,7 +8,11 @@ class SessionsController < ApplicationController
     reset_session
     remember_me @user
     log_in @user
-    redirect_to root_path
+    if @user.admin?
+      redirect_to admin_orders_path
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy

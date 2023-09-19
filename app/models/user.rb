@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_one_attached :avatar
   has_many :notifications, as: :recipient, dependent: :destroy
 
+  enum role: {user: 0, admin: 1}
+
   validates :first_name, presence: true,
           length: {maximum: Settings.validates.users.name.max_length}
   validates :last_name, presence: true,
