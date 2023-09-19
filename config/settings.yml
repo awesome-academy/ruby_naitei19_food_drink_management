@@ -49,6 +49,11 @@ validates:
     price:
       min: 0
       max: 500000
+  notifications:
+    title:
+      max_length: 50
+    content:
+      max_length: 250
 app_name: "Yummy"
 config:
   pagination:

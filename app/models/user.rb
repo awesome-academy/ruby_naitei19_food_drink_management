@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :orders, dependent: :destroy
   has_many :reviews, dependent: :destroy
   has_one_attached :avatar
+  has_many :notifications, as: :recipient, dependent: :destroy
 
   validates :first_name, presence: true,
           length: {maximum: Settings.validates.users.name.max_length}

@@ -1,9 +1,11 @@
 document.addEventListener("turbo:load", function() {
   let image_upload = document.querySelector("#avatar-input")
   let image_preview = document.querySelector("#preview-img")
-  image_upload.addEventListener("change", function(){
-    readURL(image_upload, image_preview)
-  })
+  if (image_upload) {
+    image_upload.addEventListener("change", function(){
+      readURL(image_upload, image_preview)
+    })
+  }
 })
 
 function readURL(input, image) {

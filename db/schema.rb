@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_14_132206) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_15_061600) do
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -63,6 +63,17 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_14_132206) do
     t.index ["category_id"], name: "index_cuisines_on_category_id"
     t.index ["deleted_at"], name: "index_cuisines_on_deleted_at"
     t.index ["slug"], name: "index_cuisines_on_slug", unique: true
+  end
+
+  create_table "notifications", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "recipient_id"
+    t.string "recipient_type"
+    t.string "title"
+    t.text "content"
+    t.datetime "read_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["recipient_id"], name: "index_notifications_on_recipient_id"
   end
 
   create_table "options", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -145,6 +156,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_14_132206) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cuisines", "categories"
+  add_foreign_key "notifications", "users", column: "recipient_id"
   add_foreign_key "options", "cuisines"
   add_foreign_key "order_items", "cuisines"
   add_foreign_key "order_items", "orders"

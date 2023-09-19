@@ -24,7 +24,7 @@ cuisine1 = Cuisine.create(
   price: 10,
   discount: 0,
   available: true,
-  category: category1 
+  category: category1
 )
 cuisine1.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
@@ -35,7 +35,7 @@ cuisine2 = Cuisine.create(
   price: 12,
   discount: 0,
   available: true,
-  category: category1 
+  category: category1
 )
 cuisine2.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
@@ -46,7 +46,7 @@ cuisine3 = Cuisine.create(
   price: 12,
   discount: 0,
   available: false,
-  category: category1 
+  category: category1
 )
 cuisine3.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
@@ -68,7 +68,7 @@ cuisine5 = Cuisine.create(
   price: 12,
   discount: 0,
   available: false,
-  category: category2 
+  category: category2
 )
 cuisine5.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
 
@@ -160,4 +160,14 @@ end
   order.sum = order.order_items.sum(:sum)
   order.created_at = Faker::Date.between(from: 365.days.ago, to: Date.today)
   order.save!
+end
+
+# Create notification
+10.times do |n|
+  Notification.create!(
+    title: Faker::Lorem.sentence(word_count: 3),
+    recipient_type: "User",
+    content: Faker::Lorem.paragraph_by_chars(number: 128),
+    recipient_id: User.pluck(:id).sample
+  )
 end
