@@ -1,0 +1,144 @@
+<div class="container min-vh-100">
+  <div class="row">
+    <!-- Số lượng khách hàng trong tháng -->
+    <div class=" card mt-4 col mx-3 ">
+      <div class="card-body d-flex justify-content-between">
+        <div>
+          <h6 class="card-title fw-bold text-black-50 mb-0"><%= t(".profit") %></h6>
+          <p class="card-text fs-1 text fw-bold mb-0"><%= @this_month_revenue/1000 %></p>
+          <span>
+            <% if @percent_revenue > 0 %>
+              <span class="text-success">+<%= @percent_revenue %>%</span>
+            <% else %>
+              <span class="text-danger"><%= @percent_revenue %>%</span>
+            <% end %>
+            <%= t(".since_last_month") %>
+          </span>
+        </div>
+        <%= image_tag("profit.png", alt: "Example Image", width: "50", height: "50") %>
+      </div>
+    </div>
+    <!-- Mức độ tăng trưởng khách so với tháng trước -->
+    <div class="card mt-4 col mx-3">
+      <div class="card-body d-flex justify-content-between">
+        <div>
+          <h6 class="card-title fw-bold text-black-50 mb-0"><%= t(".orders") %></h6>
+          <p class="card-text fs-1 text fw-bold mb-0"><%= @this_month_orders %></p>
+          <span>
+            <% if @percent_orders > 0 %>
+              <span class="text-success">+<%= @percent_orders %>%</span>
+            <% else %>
+              <span class="text-danger"><%= @percent_orders %>%</span>
+            <% end %>
+            <%= t(".since_last_month") %>
+          </span>
+        </div>
+        <%= image_tag("order.jpg", alt: "Example Image", width: "50", height: "50") %>
+      </div>
+    </div>
+    <!-- Doanh thu tháng này -->
+    <div class=" card mt-4 col mx-3 ">
+      <div class="card-body d-flex justify-content-between">
+        <div>
+          <h6 class="card-title fw-bold text-black-50 mb-0"><%= t(".customers") %></h6>
+          <p class="card-text fs-1 text fw-bold mb-0"><%= @this_month_new_users %></p>
+          <span>
+            <% if @percent_new_users > 0 %>
+              <span class="text-success">+<%= @percent_new_users %>%</span>
+            <% else %>
+              <span class="text-danger"><%= @percent_new_users %>%</span>
+            <% end %>
+            <%= t(".since_last_month") %>
+          </span>
+        </div>
+        <%= image_tag("users.jpg", alt: "Example Image", width: "50", height: "50") %>
+      </div>
+    </div>
+    <!-- Mức độ tăng trưởng doanh thu so với tháng trước -->
+    <div class=" card mt-4 col mx-3 ">
+      <div class="card-body d-flex justify-content-between">
+        <div>
+          <h6 class="card-title fw-bold text-black-50 mb-0"><%= t(".total_profit") %></h6>
+          <p class="card-text fs-1 text fw-bold mb-0"><%= @total_revenue/1000 %></p>
+        </div>
+        <%= image_tag("total.png", alt: "Example Image", width: "50", height: "50") %>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-8">
+      <div class="card">
+        <h5 class="py-4 px-3 border-bottom fw-bold"><%= t(".revenue_by_month") %></h5>
+        <%= line_chart @revenue_group_by_month %>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card">
+        <h6 class="py-4 px-3 border-bottom fw-bold"><%= t(".top_5_best_selling_categories") %></h6>
+        <%= pie_chart @order_item_group_by_category_of_cuisine %>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <div class="col-4">
+      <div class="card">
+        <h5 class="py-4 px-3 border-bottom fw-bold"><%= t(".top_5_best_selling_cuisines_by_quantity") %></h5>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"><%= t(".image") %></th>
+              <th scope="col"><%= t(".name") %></th>
+              <th scope="col"><%= t(".quantity") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @top_5_cuisines_by_quantity.each do |cuisine| %>
+              <tr>
+                <td>
+                  <% if cuisine[0].image.attached? %>
+                    <%= image_tag(cuisine[0].image, width: "50", height: "50") %>
+                  <% else %>
+                    <!-- Hiển thị ảnh mặc định nếu không có ảnh -->
+                    <%= image_tag "default_image.png", size: "50x50" %>
+                  <% end %>
+                </td>
+                <td><%= cuisine[0].name %></td>
+                <td><%= cuisine[1] %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="card">
+        <h5 class="py-4 px-3 border-bottom fw-bold"><%= t(".top_5_best_selling_cuisines_by_revenue") %></h5>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col"><%= t(".image") %></th>
+              <th scope="col"><%= t(".name") %></th>
+              <th scope="col"><%= t(".revenue") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @top_5_cuisines_by_revenue.each do |cuisine| %>
+              <tr>
+                <td>
+                  <% if cuisine[0].image.attached? %>
+                    <%= image_tag(cuisine[0].image, width: "50", height: "50") %>
+                  <% else %>
+                    <!-- Hiển thị ảnh mặc định nếu không có ảnh -->
+                    <%= image_tag "default_image.png", size: "50x50" %>
+                  <% end %>
+                </td>
+                <td><%= cuisine[0].name %></td>
+                <td><%= cuisine[1] %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

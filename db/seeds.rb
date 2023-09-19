@@ -105,7 +105,7 @@ User.create(first_name: first_name, last_name: last_name, email: email, password
   phone = Faker::PhoneNumber.cell_phone
   address = Faker::Address.full_address
   role = 1
-  User.create(first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password_confirmation, is_actived: is_actived, phone: phone, address: address, role: role)
+  User.create(first_name: first_name, last_name: last_name, email: email, password: password, password_confirmation: password_confirmation, is_actived: is_actived, phone: phone, address: address, role: role, created_at: Faker::Date.between(from: 365.days.ago, to: Date.today))
 end
 
 #create default category
@@ -116,21 +116,32 @@ Category.create(name: "Default", slug: "default")
   Category.create(name: name, slug: name.parameterize)
 end
 
-100.times do
+
+20.times do
   name = Faker::Food.dish
   description = Faker::Food.description
   price = Faker::Number.between(from: 10000, to: 100000)
-  discount = Faker::Number.between(from: 0, to: 100)
+  discount = Faker::Number.between(from: 0, to: 50)
   available = true
-  c = Cuisine.create(name: name, slug: name.parameterize, description: description, price: price, discount: discount, available: available, category_id: Faker::Number.between(from: 1, to: 20))
+  slug = name.parameterize
+  category_id = Faker::Number.between(from: 1, to: 20)
+  created_at = Faker::Date.between(from: 365.days.ago, to: Date.today)
+
+  # Kiểm tra xem slug đã tồn tại hay chưa
+  if Cuisine.exists?(slug: slug)
+    slug = "#{slug}-#{SecureRandom.hex(2)}" # Thêm một chuỗi ngẫu nhiên vào slug để đảm bảo duy nhất
+  end
+  
+  c = Cuisine.create(name: name, slug: slug, description: description, price: price, discount: discount, available: available, category_id: category_id, created_at: created_at)
   c.image.attach(io: File.open(Rails.root.join('./app/assets/images', 'image.jpg')), filename: 'image.jpg')
+  c.save!
 end
 
 Cuisine.all.each do |cuisine|
   3.times do |i|
     cuisine.options.create(
       name: "Option #{i + 1}",
-      price: rand(1..5)
+      price: rand(5..20) * 1000 
     )
   end
 end
@@ -150,8 +161,8 @@ end
       order_id: order.id,
       cuisine_id: cuisine_id,
       quantity: rand(2..5),
-      price: rand(50000..100000),
-      discount: rand(0..100),
+      price: Cuisine.find(cuisine_id).price,
+      discount: Cuisine.find(cuisine_id).discount,
       option_id: option_id
     )
     order_item.sum = order_item.quantity * order_item.price

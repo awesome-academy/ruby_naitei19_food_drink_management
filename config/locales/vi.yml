@@ -131,6 +131,21 @@ vi:
       submit: "Đăng nhập"
       remember_me: "Ghi nhớ đăng nhập"
   admin:
+    dashboard:
+      show:
+        profit: "Lợi nhuận"
+        since_last_month: "từ tháng trước"
+        orders: "Đơn hàng"
+        customers: "Khách hàng"
+        total_profit: "Tổng lợi nhuận"
+        revenue_by_month: "Doanh thu theo tháng"
+        top_5_best_selling_categories: "Top 5 danh mục bán chạy nhất"
+        top_5_best_selling_cuisines_by_quantity: "Top 5 món ăn bán chạy nhất theo số lượng"
+        top_5_best_selling_cuisines_by_revenue: "Top 5 món ăn bán chạy nhất theo doanh thu"
+        image: "Hình ảnh"
+        name: "Tên"
+        quantity: "Số lượng"
+        revenue: "Doanh thu"
     cuisines:
       index:
         name: "Tên"
