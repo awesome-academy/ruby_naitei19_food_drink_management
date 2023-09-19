@@ -4,6 +4,7 @@ class Cuisine < ApplicationRecord
   belongs_to :category
   has_many :options, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :order_items, dependent: :destroy
   has_one_attached :image
 
   def self.ransackable_attributes _auth_object = nil

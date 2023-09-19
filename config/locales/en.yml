@@ -120,6 +120,21 @@ en:
       submit: "Login"
       remember_me: "Remember me"
   admin:
+    dashboard:
+      show:
+        profit: "Profit"
+        since_last_month: "since last month"
+        orders: "Orders"
+        customers: "Customers"
+        total_profit: "Total profit"
+        revenue_by_month: "Revenue by month"
+        top_5_best_selling_categories: "Top 5 best selling categories"
+        top_5_best_selling_cuisines_by_quantity: "Top 5 best selling cuisines by quantity"
+        top_5_best_selling_cuisines_by_revenue: "Top 5 best selling cuisines by revenue"
+        image: "Image"
+        name: "Name"
+        quantity: "Quantity"
+        revenue: "Revenue"
     cuisines:
       index:
         name: "Name"

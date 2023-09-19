@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       end
       resources :categories, param: :slug
       resources :orders, only: %i(index show destroy update)
+      resource :dashboard, only: [:show], controller: "dashboard", as: "custom_dashboard"
     end
     resources :options, only: %i(create new)
     resources :order_items, only: %i(create new)
