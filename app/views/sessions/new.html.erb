@@ -7,10 +7,10 @@
       <div class="col-md-6">
         <div class="form_container">
           <%= form_with url: login_path, scope: :session do |f| %>
-            <%= f.label :email, t(".email") %>
+            <%= f.label :email, t(".email"), class: "required" %>
             <%= f.text_field :email, class: "form-control mb-3" %>
 
-            <%= f.label :password, t(".password") %>
+            <%= f.label :password, t(".password"), class: "required" %>
             <%= f.password_field :password, class: "form-control mb-3" %>
 
 

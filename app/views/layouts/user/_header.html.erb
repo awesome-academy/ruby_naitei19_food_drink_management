@@ -1,11 +1,10 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
   <div class="container d-flex align-items-center justify-content-between">
-    <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
-      <h1>Yummy<span>.</span></h1>
-    </a>
+    <%= link_to raw("<h1>Yummy<span>.</span></h1>"), root_path,
+    class: "logo d-flex align-items-center me-auto me-lg-0" %>
     <nav id="navbar" class="navbar">
       <ul>
-        <li><%= link_to t(".home"), "/" %></li>
+        <li><%= link_to t(".home"), root_path %></li>
         <li><%= link_to t(".menu"), category_path('category-1') %></li>
         <li><%= link_to t(".all_cuisines"), cuisines_path %></li>
         <li><%= link_to t("order.name"), order_path %></li>

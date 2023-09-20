@@ -131,6 +131,7 @@ vi:
       submit: "Đăng nhập"
       remember_me: "Ghi nhớ đăng nhập"
   admin:
+    require_login: "Bạn cần đăng nhập trước"
     dashboard:
       show:
         profit: "Lợi nhuận"

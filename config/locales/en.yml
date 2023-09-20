@@ -120,6 +120,7 @@ en:
       submit: "Login"
       remember_me: "Remember me"
   admin:
+    require_login: "You need to login first"
     dashboard:
       show:
         profit: "Profit"
