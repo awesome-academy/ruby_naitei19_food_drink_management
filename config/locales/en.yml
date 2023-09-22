@@ -302,6 +302,8 @@ en:
         search_by_phone: "Search by phone"
         search_by_address: "Search by address"
         search_by_status: "Search by status"
+        search_by_min_total: "Search by min total"
+        search_by_max_total: "Search by max total"
       option:
         name: "Name"
         price: "Price"

@@ -1,6 +1,6 @@
 class Admin::CuisinesController < Admin::BaseController
   before_action :find_cuisine, only: %i(edit update destroy)
-  before_action :load_categories, only: %i(new edit)
+  before_action :load_categories, only: %i(new edit create)
 
   def index
     @q = Cuisine.ransack(params[:q])
@@ -21,7 +21,7 @@ class Admin::CuisinesController < Admin::BaseController
 
     if @cuisine.save
       flash[:success] = t(".success")
-      redirect_to admin_cuisines_path(@cuisine)
+      redirect_to edit_admin_cuisine_path(slug: @cuisine.slug)
     else
       flash.now[:danger] = t(".fail")
       render :new
@@ -31,9 +31,10 @@ class Admin::CuisinesController < Admin::BaseController
   def edit; end
 
   def update
+    save_image @cuisine
     if @cuisine.update(cuisine_params)
       flash[:success] = t(".success")
-      redirect_to admin_cuisines_path(@cuisine)
+      redirect_to edit_admin_cuisine_path(slug: @cuisine.slug)
     else
       flash.now[:danger] = t(".fail")
       render :edit

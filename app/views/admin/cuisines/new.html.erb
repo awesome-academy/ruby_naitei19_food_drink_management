@@ -1,7 +1,7 @@
 <div class="d-flex justify-content-between align-items-center mb-5">
   <h1 class="mb-0"><%= t(".title") %></h1>
   <div>
-    <%= link_to t(".back"), edit_admin_cuisine_path(slug: @cuisine.slug), class: "btn btn-secondary" %>
+    <%= link_to t(".back"), admin_cuisines_path, class: "btn btn-secondary" %>
   </div>
 </div>
 <%= content_for :button_text do %>

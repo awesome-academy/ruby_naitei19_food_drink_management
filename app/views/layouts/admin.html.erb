@@ -16,6 +16,11 @@
       <%= render "layouts/admin/header" %>
       <div class="body flex-grow-1 px-3">
         <div class="container-lg">
+          <% flash.each do |message_type, message| %>
+            <div class="alert alert-<%= message_type %> alert-dismissible fade show" role="alert" >
+              <%= message %>
+            </div>
+          <% end %>
           <%= yield %>
         </div>
         <%= render "layouts/admin/footer" %>

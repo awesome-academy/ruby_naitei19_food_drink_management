@@ -1,4 +1,4 @@
-<%= bootstrap_form_for([:admin, @cuisine]) do |f| %>
+<%= bootstrap_form_for([:admin, @cuisine], url: admin_cuisine_path(slug: @cuisine.slug), method: :patch) do |f| %>
   <%= f.alert_message t("admin.shared.cuisine_form.please_fix_errors_below") %>
   <div class="row">
     <div class="col"><%= f.text_field :name , label: t("admin.shared.cuisine_form.name") %></div>
