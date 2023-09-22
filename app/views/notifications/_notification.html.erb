@@ -1,4 +1,6 @@
-<div class="notif-item d-flex align-items-center unread">
+<div class="notif-item d-flex align-items-center
+  <%= !notification.read_at? && "unread" %>"
+>
   <div class="item-dot">
   </div>
   <div class="item-box">

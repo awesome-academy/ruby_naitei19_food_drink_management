@@ -209,7 +209,7 @@ en:
         date: "Date"
         address: "Address"
         total_amount: "Total amount"
-        details: "Details"
+        details: "Actions"
         status: "Status"
         actions: "Actions"
         phone: "Phone"
@@ -225,6 +225,7 @@ en:
         pending: "Pending"
         accepted: "Accepted"
         rejected: "Rejected"
+        cancelled: "Cancelled"
         date: "Date"
         address: "Address"
         total_amount: "Total amount"
@@ -288,6 +289,7 @@ en:
         pending: "Pending"
         accepted: "Accepted"
         rejected: "Rejected"
+        cancelled: "Cancelled"
         unknown: "Unknown"
         details: "Details"
         accept: "Accept"
@@ -337,6 +339,7 @@ en:
       pending: "Pending"
       accepted: "Accepted"
       rejected: "Rejected"
+      cancelled: "Cancelled"
     index:
       require_login: "You need to login first"
       title: "History Order"
@@ -348,6 +351,7 @@ en:
       pending: "Pending"
       accepted: "Accepted"
       rejected: "Rejected"
+      cancelled: "Cancelled"
     create:
       success: "Order was successfully created"
     new:
@@ -366,6 +370,7 @@ en:
       pending: "Pending"
       accepted: "Accepted"
       rejected: "Rejected"
+      cancelled: "Cancelled"
     option_for: "Options for"
     your_order: "Your order"
     no_order: "Your order is empty"

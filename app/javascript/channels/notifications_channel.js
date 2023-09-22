@@ -11,5 +11,6 @@ consumer.subscriptions.create("NotificationsChannel", {
 
   received(data) {
     $("#notif-list").prepend(data.html)
+    $("#notif-icon").addClass("active")
   },
 });
