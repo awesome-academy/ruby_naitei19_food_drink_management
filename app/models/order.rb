@@ -6,7 +6,7 @@ class Order < ApplicationRecord
   has_one :payment, dependent: :destroy
   accepts_nested_attributes_for :payment
 
-  enum status: {pending: 0, accepted: 1, rejected: 2}
+  enum status: {pending: 0, accepted: 1, rejected: 2, cancelled: 3}
 
   def self.ransackable_attributes _auth_object = nil
     %w(address phone sum created_at status)

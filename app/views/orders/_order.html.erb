@@ -10,17 +10,19 @@
       <span><%= t ".payment_in_cash" %></span>
     </div>
   </td>
-  <td class="status-box">
+  <td class="status-box align-middle">
     <div class="status <%= order.status %>">
       <%= t(".#{order.status}") %>
     </div>
-    <% if order.pending? %>
-      <%= link_to t("order.cancel"), "/orders/#{order.id}", data: {turbo_method: :delete, turbo_confirm: t("order.delete_confirm")}, class: 'status re-order' %>
-    <% else %>
-      <%= link_to t(".re_order"), "#", class: 'status re-order' %>
-    <% end %>
   </td>
   <td class="align-middle">
-    <%= link_to t(".view_order_detail"), "#", class: "view-detail" %>
+    <%= link_to t(".view_order_detail"), "#", class: "status view-detail" %>
+  </td>
+  <td class="align-middle">
+    <% if order.pending? %>
+      <%= link_to t("order.cancel"), "/orders/#{order.id}", data: {turbo_method: :delete, turbo_confirm: t("order.delete_confirm")}, class: "status cancel" %>
+    <% else %>
+      <%= link_to t(".re_order"), "#", class: "status re-order" %>
+    <% end %>
   </td>
 </tr>

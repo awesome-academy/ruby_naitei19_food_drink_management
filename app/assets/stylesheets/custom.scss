@@ -591,33 +591,36 @@ h3 {
   }
   .status {
     text-align: center;
-    width: 90px;
     height: 26px;
     line-height: 26px;
     border-radius: 3px;
     font-size: 14px;
     font-weight: 500;
-    color: $textCol;
+    font-weight: 500;
   }
   .accepted {
-    background-color: $success;
+    color: $success;
   }
   .pending {
-    background-color: $warning;
+    color: $warning;
   }
-  .rejected {
-    background-color: $danger;
-    color: $white
+  .rejected, .cancelled {
+    color: $danger;
   }
-  .re-order {
+  .re-order, .cancel {
     display: block;
-    background-color: $disabled;
-    margin-top: 5px;
+    background-color: $info;
+    color: $white;
+  }
+  .cancel {
+    background-color: $danger;
+    color: $textCol;
   }
   .view-detail {
     display: block;
     text-align: center;
     color: $info;
+    border: 1px solid $info;
   }
 }
 
@@ -1098,6 +1101,23 @@ h3 {
     font-size: 20px;
     -webkit-text-stroke: 0.25px;
     cursor: pointer;
+    &::after {
+      content: "";
+      display: none;
+      width: 10px;
+      height: 10px;
+      background-color: $info;
+      top: 10;
+      position: absolute;
+      top: 5px;
+      right: -1px;
+      border-radius: 50%;
+    }
+    &.active {
+      &::after {
+        display: block;
+      }
+    }
   }
 
   .notif-item {

@@ -60,7 +60,7 @@ class OrdersController < ApplicationController
   end
 
   def destroy
-    if @order.destroy
+    if @order.cancelled!
       flash[:success] = t "order.order_cancelled_successfully"
     else
       flash[:error] = t "order.order_cancellation_failed"
