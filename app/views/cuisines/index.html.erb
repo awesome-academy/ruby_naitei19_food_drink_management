@@ -34,11 +34,15 @@
   <div class="container">
     <div class="row">
       <% if @cuisines.any? %>
-      <%== pagy_bootstrap_nav(@pagy) %>
+        <% if display_pagination? @cuisines %>
+          <%== pagy_bootstrap_nav(@pagy) %>
+        <% end %>
         <%= render @cuisines %>
-      <%== pagy_bootstrap_nav(@pagy) %>
+        <% if display_pagination? @cuisines %>
+          <%== pagy_bootstrap_nav(@pagy) %>
+        <% end %>
       <% else %>
-        <p>No cuisines found.</p>
+        <p><%= t "cuisine.no_found" %></p>
       <% end %>
     </div>
   </div>
