@@ -118,6 +118,7 @@ vi:
     must_be_a_PNG_JPG_JPEG: "phai la PNG, JPG, JPEG"
     out_of_stock: "Het hang"
     available: "Con hang"
+    no_found: "Khong co mon an nao"
   category:
     no_have: "Khong co danh muc nay"
   sessions:

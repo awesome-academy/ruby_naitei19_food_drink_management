@@ -4,10 +4,12 @@ class CuisinesController < ApplicationController
     @q = Cuisine.ransack(params[:q])
     if params[:q].present?
       @pagy, @cuisines = pagy(@q.result(distinct: true),
-                              items: Settings.config.cuisines_per_page)
+                              items: Settings.config.pagination
+                              .cuisines_per_page)
     else
       @pagy, @cuisines = pagy(Cuisine.order_by_created_at,
-                              items: Settings.config.cuisines_per_page)
+                              items: Settings.config.pagination
+                              .cuisines_per_page)
     end
   end
 
