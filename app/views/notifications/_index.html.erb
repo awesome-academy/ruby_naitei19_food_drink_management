@@ -1,7 +1,7 @@
 <h3 class="mb-3 px-3"><%= t ".title" %></h3>
 <div class="dropdown-divider"></div>
 <div class="notif-list" id="notif-list">
-  <% if logged_in? %>
+  <% if user_signed_in? %>
     <%= render partial: "notification", collection: notifications %>
   <% else %>
     <p class="text-center"><%= t ".require_login" %> </p>
