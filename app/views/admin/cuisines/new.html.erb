@@ -7,4 +7,6 @@
 <%= content_for :button_text do %>
   <%= t(".submit") %>
 <% end %>
+<% content_for :custom_path, admin_cuisines_path %>
+<% content_for :method, :post %>
 <%= render partial: "admin/shared/cuisine_form"%>

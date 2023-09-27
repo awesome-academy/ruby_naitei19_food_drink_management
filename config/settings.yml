@@ -23,6 +23,9 @@ validates:
     price:
       min: 0
       max: 2000000
+    discount:
+      min: 0
+      max: 100
   reviews:
     comment:
       max_length: 500

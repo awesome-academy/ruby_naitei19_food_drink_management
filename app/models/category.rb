@@ -14,4 +14,5 @@ length: {maximum: Settings.validates.categories.slug.max_length}
 
   scope :sort_by_name, ->{order(name: :asc)}
   scope :by_slug, ->(slug){where(slug:)}
+  scope :order_by_created_at, ->{order(created_at: :desc)}
 end

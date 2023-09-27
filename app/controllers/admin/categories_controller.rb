@@ -4,7 +4,7 @@ class Admin::CategoriesController < Admin::BaseController
 
   def index
     @q = Category.ransack(params[:q])
-    @pagy, @categories = pagy(@q.result(distinct: true).includes(:cuisines),
+    @pagy, @categories = pagy(@q.result(distinct: true).order_by_created_at.includes(:cuisines),
                               items: Settings.config.categories_per_page)
   end
 
