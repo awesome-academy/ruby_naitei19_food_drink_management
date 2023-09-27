@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :logged_in_user, only: %i(index new create)
+  before_action :authenticate_user!, only: %i(index new create)
   before_action :search_params, only: :index
   before_action :order_empty?, only: %i(new create)
   before_action :find_order, only: :destroy

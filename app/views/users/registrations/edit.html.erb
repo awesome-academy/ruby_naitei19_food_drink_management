@@ -1,19 +1,22 @@
 <% provide :title, t(".title") %>
 
 <section class="edit-profile">
+<%= devise_error_messages! %>
   <div class="wrapper">
     <div class="row gx-5">
       <div class="col-md-3">
-        <%= render "stats" %>
+        <%= render "users/shared/stats" %>
       </div>
       <div class="col-md-9 px-5">
         <div class="user-info">
           <div class="user-info-header">
             <%= t ".profile_header" %>
           </div>
-            <%= render "form" %>
+            <%= render "users/shared/form" %>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+

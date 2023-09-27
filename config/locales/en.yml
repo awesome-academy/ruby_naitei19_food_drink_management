@@ -57,35 +57,46 @@ en:
         categories: "Categories"
         orders: "Orders"
   users:
+    sessions:
+      user_not_found: "User not found"
+      invalid_combination: "Invalid email/password combination"
+      user_not_logged_in: "You need to logged in"
+      new:
+        title: "Login"
+        email: "Email"
+        password: "Password"
+        submit: "Login"
+        remember_me: "Remember me"
     user_not_found: "User not found"
-    new:
-      title: "Sign up"
-      first_name: "First Name"
-      last_name: "Last Name"
-      email: "Email"
-      password: "Password"
-      password_confirmation: "Confirm Password"
-      submit: "Sign up"
-    create:
-      success: "User created successfully"
-    edit:
-      title: "Update profile"
-      profile_header: "User information"
-    update:
-      success: "User updated successfully"
-    stats:
-      update_account: "Account update"
-      payment_method: "Payment method"
-    form:
-      update_avatar: "Update avatar"
-      change_info: "Change info"
-      first_name: "First Name"
-      last_name: "Last Name"
-      phone: "Phone number"
-      password: "Password"
-      password_confirmation: "Confirm Password"
-      address: "Address"
-      submit: "Save change"
+    registrations:
+      new:
+        title: "Sign up"
+        first_name: "First Name"
+        last_name: "Last Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirm Password"
+        submit: "Sign up"
+      create:
+        success: "User created successfully"
+      edit:
+        title: "Update profile"
+        profile_header: "User information"
+      update:
+        success: "User updated successfully"
+    shared:
+      stats:
+        update_account: "Account update"
+        payment_method: "Payment method"
+      form:
+        update_avatar: "Update avatar"
+        change_info: "Change info"
+        first_name: "First Name"
+        last_name: "Last Name"
+        phone: "Phone number"
+        current_password: "Current password"
+        address: "Address"
+        submit: "Save change"
   category:
     menu: "Menu"
     menu_explore: "Explore Our Best Menu"
@@ -110,16 +121,6 @@ en:
     no_found: "No cuisines found"
   category:
     no_have: "Don't have this category"
-  sessions:
-    user_not_found: "User not found"
-    invalid_combination: "Invalid email/password combination"
-    user_not_logged_in: "You need to logged in"
-    new:
-      title: "Login"
-      email: "Email"
-      password: "Password"
-      submit: "Login"
-      remember_me: "Remember me"
   admin:
     require_login: "You need to login first"
     dashboard:

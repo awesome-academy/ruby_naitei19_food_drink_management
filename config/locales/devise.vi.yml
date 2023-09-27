@@ -1,0 +1,18 @@
+# Additional translations at https://github.com/heartcombo/devise/wiki/I18n
+
+vi:
+  devise:
+    failure:
+      already_authenticated: "Bạn đã đăng nhập"
+      inactive: "Tài khoản chưa được kích hoạt"
+      invalid: "%{authentication_keys} hoặc mật khẩu không hợp lệ"
+      not_found_in_database: "%{authentication_keys} hoặc mật khẩu không hợp lệ"
+      timeout: "Phiên đăng nhập đã hết hạn. Đăng nhập lại để tiếp tục"
+      unauthenticated: "Bạn cần đăng nhập để tiếp tục"
+    registrations:
+      destroyed: "Đăng xuất thành công"
+      signed_up: "Đăng ký tài khoản thành công"
+    sessions:
+      signed_in: "Đăng nhập thành công"
+      signed_out: "Đăng xuất thành công"
+      already_signed_out: "Đăng nhập thành công"

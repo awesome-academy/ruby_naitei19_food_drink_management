@@ -1,12 +1,14 @@
-<%= form_with model: @user do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name),
+html: { method: :put }) do |f| %>
+  <% resource.errors.full_messages.each %>
   <div class="user-info-content">
     <div class="title-user"><%= t ".update_avatar" %></div>
     <div class="d-flex align-item-center gap-5">
       <div class="avatar-circle">
-        <%= image_tag user_avatar(@user), id: "preview-img", class: "avatar-circle" %>
+        <%= image_tag user_avatar(resource), id: "preview-img", class: "avatar-circle" %>
       </div>
       <div class="my-auto" >
-        <p class="error"><%= show_errors @user, :avatar %></p>
+        <p class="error"><%= show_errors resource, :avatar %></p>
         <%= f.file_field :avatar, class: "avatar-input", id: "avatar-input"
         %>
       </div>
@@ -22,38 +24,32 @@
       <div class="col-md-6">
         <%= f.label :first_name, t(".first_name"), class: "required" %>
         <%= f.text_field :first_name, class: "form-control" %>
-        <p class="error"><%= show_errors @user, :first_name %></p>
+        <p class="error"><%= show_errors resource, :first_name %></p>
       </div>
       <div class="col-md-6">
         <%= f.label :last_name, t(".last_name"), class: "required" %>
         <%= f.text_field :last_name, class: "form-control" %>
-        <p class="error"><%= show_errors @user, :last_name %></p>
+        <p class="error"><%= show_errors resource, :last_name %></p>
       </div>
       <div class="col-md-6">
         <%= f.label :phone, t(".phone"), class: "required" %>
         <%= f.text_field :phone, class: "form-control" %>
-        <p class="error"><%= show_errors @user, :phone %></p>
+        <p class="error"><%= show_errors resource, :phone %></p>
       </div>
       <div class="col-md-6">
         <%= f.label :email, class: "required" %>
         <%= f.text_field :email, class: "form-control" %>
-        <p class="error"><%= show_errors @user, :email %></p>
+        <p class="error"><%= show_errors resource, :email %></p>
       </div>
       <div class="col-md-6">
-        <%= f.label :password, t(".password"), class: "required" %>
-        <%= f.password_field :password, class: "form-control" %>
-        <p class="error"><%= show_errors @user, :password %></p>
-
-      </div>
-      <div class="col-md-6">
-        <%= f.label :password_confirmation, t(".password_confirmation"), class: "required" %>
-        <%= f.password_field :password_confirmation, class: "form-control" %>
-        <p class="error"><%= show_errors @user, :password_confirmation %></p>
+        <%= f.label :current_password, t(".current_password"), class: "required" %>
+        <%= f.password_field :current_password, class: "form-control" %>
+        <p class="error"><%= show_errors resource, :current_password %></p>
       </div>
       <div class="col-md-12">
         <%= f.label :address, t(".address") %>
         <%= f.text_field :address, class: "form-control " %>
-        <p class="error"><%= show_errors @user, :address %></p>
+        <p class="error"><%= show_errors resource, :address %></p>
       </div>
       <div class="col-md-3">
         <%= f.submit t(".submit"), class: "submit-btn" %>
