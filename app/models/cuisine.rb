@@ -37,6 +37,8 @@ class Cuisine < ApplicationRecord
                    less_than: Settings.validates.cuisines.price.max}
   validates :discount, presence: true,
     numericality: {only_integer: true,
-                   greater_than_or_equal_to: Settings.validates.cuisines.discount.min,
-                   less_than_or_equal_to: Settings.validates.cuisines.discount.max}
+                   greater_than_or_equal_to: Settings
+                     .validates.cuisines.discount.min,
+                   less_than_or_equal_to: Settings
+                     .validates.cuisines.discount.max}
 end

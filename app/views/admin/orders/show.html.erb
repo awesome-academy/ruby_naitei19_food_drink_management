@@ -13,6 +13,7 @@
         <% end %>
       <% end %>
       <%= link_to t(".back"), admin_orders_path, class: "btn btn-secondary" %>
+      <%= link_to "Save as Excel", excel_admin_order_path(@order, format: :xlsx), class: "btn btn-success text-white" %>
     </div>
   </div>
   <div class="row">

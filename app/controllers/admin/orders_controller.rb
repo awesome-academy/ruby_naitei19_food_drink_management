@@ -20,6 +20,18 @@ class Admin::OrdersController < Admin::BaseController
     redirect_to admin_orders_path
   end
 
+  def excel
+    @order = Order.find(params[:id])
+    @order_items = @order.order_items
+    @user = @order.user
+    respond_to do |format|
+      format.xlsx do
+        render xlsx: "export_order",
+               filename: "order-#{@order.id}.xlsx"
+      end
+    end
+  end
+
   private
 
   def order_params

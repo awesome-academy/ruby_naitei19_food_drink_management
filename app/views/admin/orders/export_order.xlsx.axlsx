@@ -1,0 +1,31 @@
+wb = xlsx_package.workbook
+wb.styles do |s|
+  header_style = s.add_style bg_color: "00", fg_color: "FF", sz: 14, alignment: { horizontal: :center }
+  content_style = s.add_style sz: 12, alignment: { horizontal: :left }
+
+  wb.add_worksheet(name: "Order Details") do |sheet|
+    # Order Detail
+    sheet.add_row ["Order Detail"], style: header_style
+    sheet.add_row ["Date", @order.created_at.strftime("%d/%m/%Y %H:%M")]
+    sheet.add_row ["Address", @order.address]
+    sheet.add_row ["Phone", @order.phone]
+    sheet.add_row ["Status", @order.status.capitalize]
+    sheet.add_row ["Total Price", @order.sum], style: content_style
+    sheet.add_row ["User", "#{@order.user_first_name} #{@order.user_last_name}"]
+    sheet.add_row ["Email", @order.user_email]
+    
+    # Blank row for separation
+    sheet.add_row []
+
+    # Cuisine List
+    sheet.add_row ["Cuisine List"], style: header_style
+    sheet.add_row ["Cuisine", "Quantity", "Price", "Discount", "Total Price"], style: header_style
+    @order_items.each do |item|
+      # You may need to adjust the following line based on the structure of your order item
+      sheet.add_row [item.cuisine_name, item.quantity, item.price, item.discount, item.sum], style: content_style
+      if item.option.present?
+        sheet.add_row ["Option","Name", item.option_name, "Price", number_to_currency(item.option_price)], style: content_style
+      end
+    end
+  end
+end
