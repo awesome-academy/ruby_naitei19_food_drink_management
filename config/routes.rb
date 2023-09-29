@@ -14,8 +14,12 @@ Rails.application.routes.draw do
       end
       resources :categories, param: :slug
       resources :orders, only: %i(index show destroy update)
+      resources :orders do
+        get :excel, on: :member, defaults: { format: 'xlsx' } 
+      end
       resource :dashboard, only: [:show], controller: "dashboard", as: "custom_dashboard"
     end
+    
     resources :options, only: %i(create new)
     resources :order_items, only: %i(create new)
     resources :orders, only: %i(new create destroy)
