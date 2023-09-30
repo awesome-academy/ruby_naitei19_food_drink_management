@@ -5,6 +5,7 @@ ruby "3.2.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
+gem "rails-controller-testing", "~> 1.0"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
@@ -57,6 +58,7 @@ gem "caxlsx", "~> 3.0"
 gem "chartkick"
 gem "config"
 gem "devise"
+gem "factory_bot_rails"
 gem "faker"
 gem "figaro"
 gem "groupdate"
