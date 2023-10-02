@@ -10,9 +10,9 @@ class Admin::BaseController < ApplicationController
   end
 
   def logged_in_user
-    return if logged_in?
+    return if user_signed_in?
 
     flash[:danger] = t("admin.require_login")
-    redirect_to login_path, status: :see_other
+    redirect_to new_user_session_path, status: :see_other
   end
 end

@@ -45,7 +45,6 @@ gem "bootsnap", require: false
 
 # Use Sass to process CSS
 # gem "sassc-rails"
-gem "bootstrap-sass", "3.4.1"
 gem "sassc-rails", "2.1.2"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html]
