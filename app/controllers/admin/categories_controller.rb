@@ -42,9 +42,9 @@ class Admin::CategoriesController < Admin::BaseController
 
   def destroy
     if @category.destroy
-      flash[:success] = t "admin.categories.success"
+      flash[:success] = t "admin.categories.destroy.success"
     else
-      flash[:danger] = t "admin.categories.fail"
+      flash[:danger] = t "admin.categories.destroy.fail"
     end
     redirect_to admin_categories_path
   end
